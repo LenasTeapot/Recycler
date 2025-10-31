@@ -44,7 +44,7 @@ dof_blur_far_distance = 20.0
 
 [sub_resource type="Curve3D" id="Curve3D_dfgtn"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2.17, 26.855, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.735, 0, 0, 0, 0, 0, 0, 0, 0, 9.995, 26.855, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
@@ -53,13 +53,16 @@ point_count = 2
 script = ExtResource("1_32ug3")
 
 [node name="BuildingB" parent="." instance=ExtResource("1_x1kyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 12)
 
 [node name="BuildingC" parent="." instance=ExtResource("2_ms54r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 22)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, 0, 5, 36)
 
 [node name="BuildingA" parent="." instance=ExtResource("2_ms54r")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, -22)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, 1, 0, 5, -12)
+
+[node name="BuildingA2" parent="." instance=ExtResource("2_ms54r")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 5, -36)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -1.53277, 0)
@@ -103,7 +106,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7537, 0, 0)
 curve = SubResource("Curve3D_dfgtn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-4.37114e-08, 0.996751, 0.0805416, 0, 0.0805416, -0.996751, -1, -4.35694e-08, -3.52058e-09, -0.106531, 1.31838, 0)
+transform = Transform3D(-4.37114e-08, -0.916396, -0.400273, 0, 0.400273, -0.916396, 1, -4.00569e-08, -1.74965e-08, -1.20576, 1.21165, 0)
 progress = 1.32316
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
