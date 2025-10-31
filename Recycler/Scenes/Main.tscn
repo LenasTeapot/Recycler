@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cbdtpmwajox4l"]
+[gd_scene load_steps=15 format=3 uid="uid://cbdtpmwajox4l"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_32ug3"]
 [ext_resource type="PackedScene" uid="uid://du0fsi2mhwtl6" path="res://Scenes/Building.tscn" id="1_x1kyp"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bm4m78xu4hut5" path="res://Scenes/Building_Blank.tscn" id="2_ms54r"]
 [ext_resource type="Script" path="res://Scripts/UI_Manager.gd" id="3_0fs0c"]
 [ext_resource type="PackedScene" uid="uid://bc3tttw1q2h7d" path="res://Scenes/canvas_inventory.tscn" id="4_36l3p"]
+[ext_resource type="AudioStream" uid="uid://cp7w6o4bqccr7" path="res://Music/013_Another_August.mp3" id="7_tjtpk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ea2u5"]
 
@@ -102,5 +103,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7537, 0, 0)
 curve = SubResource("Curve3D_dfgtn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-4.37114e-08, 0.996751, 0.0805409, 0, 0.0805409, -0.996751, -1, -4.35694e-08, -3.52055e-09, -0.106531, 1.31838, 0)
+transform = Transform3D(-4.37114e-08, 0.996751, 0.0805416, 0, 0.0805416, -0.996751, -1, -4.35694e-08, -3.52058e-09, -0.106531, 1.31838, 0)
 progress = 1.32316
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_tjtpk")
+autoplay = true
