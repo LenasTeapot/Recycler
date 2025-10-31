@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhdy3c8h00mgn"]
+
+[ext_resource type="Script" path="res://InventoryLabel.gd" id="1_lpi53"]
+
+[node name="Label" type="Label"]
+offset_right = 80.0
+offset_bottom = 23.0
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_lpi53")

@@ -1,0 +1,169 @@
+[gd_scene load_steps=29 format=3 uid="uid://du0fsi2mhwtl6"]
+
+[ext_resource type="PackedScene" uid="uid://bmgmpouwk621s" path="res://Scenes/Interactable.tscn" id="1_04lo1"]
+[ext_resource type="Script" path="res://Scripts/BuildingManager.gd" id="1_xgfq5"]
+[ext_resource type="Script" path="res://Resources/Interaction.gd" id="2_gaags"]
+[ext_resource type="Resource" uid="uid://ctaq34pky6k3k" path="res://Resources/ItemsList.tres" id="2_hqc6i"]
+[ext_resource type="Script" path="res://Resources/Action_MeshSwap.gd" id="2_jkw5e"]
+[ext_resource type="Resource" uid="uid://hjjel312s5no" path="res://Resources/Interaction.tres" id="2_sabkf"]
+[ext_resource type="PackedScene" uid="uid://bm4m78xu4hut5" path="res://Scenes/Building_Blank.tscn" id="3_5lpi6"]
+[ext_resource type="Script" path="res://Resources/Item.gd" id="5_jon2j"]
+[ext_resource type="Script" path="res://Resources/Action_AddItemToPossibleTrash.gd" id="6_1pyhb"]
+[ext_resource type="Script" path="res://Resources/Action_TrashCollect.gd" id="7_s8cxi"]
+[ext_resource type="PackedScene" uid="uid://jkad4oailp2o" path="res://Scenes/Neighbor.tscn" id="8_laf2c"]
+[ext_resource type="Script" path="res://Resources/Step.gd" id="9_0ccfs"]
+[ext_resource type="Script" path="res://Resources/SpeechData.gd" id="10_f7o67"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_1nrcm"]
+
+[sub_resource type="Resource" id="Resource_hwqpv"]
+script = ExtResource("2_jkw5e")
+secondary_mesh = SubResource("PrismMesh_1nrcm")
+trigger_on_complete = "ScrapQuest"
+
+[sub_resource type="Resource" id="Resource_qlddo"]
+script = ExtResource("5_jon2j")
+item_name = "Golden Idol"
+unique = true
+
+[sub_resource type="Resource" id="Resource_h1esy"]
+script = ExtResource("6_1pyhb")
+item_to_add = SubResource("Resource_qlddo")
+trigger_on_complete = ""
+
+[sub_resource type="Resource" id="Resource_xxn41"]
+script = ExtResource("2_gaags")
+identity = "Temp Resource"
+button_label = "Test Temp Res"
+repeatable = false
+max_repeats = 0
+hide_on_complete = false
+hide_when_inactive = false
+activate_trigger = ""
+requires_item = "Scrap of Paper"
+action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_hwqpv"), SubResource("Resource_h1esy")])
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0tyj"]
+
+[sub_resource type="Resource" id="Resource_y1tmw"]
+script = ExtResource("7_s8cxi")
+trigger_on_complete = ""
+
+[sub_resource type="Resource" id="Resource_inyu3"]
+resource_local_to_scene = true
+script = ExtResource("2_gaags")
+identity = "Tennant"
+button_label = "TAKE TRASH"
+repeatable = true
+max_repeats = -1
+hide_on_complete = true
+hide_when_inactive = true
+activate_trigger = ""
+requires_item = ""
+action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_y1tmw")])
+
+[sub_resource type="Resource" id="Resource_jb4lw"]
+resource_local_to_scene = true
+script = ExtResource("2_gaags")
+identity = "Tennant"
+button_label = "TAKE TRASH"
+repeatable = true
+max_repeats = -1
+hide_on_complete = true
+hide_when_inactive = true
+activate_trigger = ""
+requires_item = ""
+action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_y1tmw")])
+
+[sub_resource type="Resource" id="Resource_8vkfj"]
+script = ExtResource("7_s8cxi")
+trigger_on_complete = ""
+
+[sub_resource type="Resource" id="Resource_642k7"]
+resource_local_to_scene = true
+script = ExtResource("2_gaags")
+identity = "Tennant"
+button_label = "TAKE TRASH"
+repeatable = true
+max_repeats = -1
+hide_on_complete = true
+hide_when_inactive = true
+activate_trigger = ""
+requires_item = ""
+action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_8vkfj")])
+
+[sub_resource type="Resource" id="Resource_eki1b"]
+resource_local_to_scene = true
+script = ExtResource("2_gaags")
+identity = "Tennant"
+button_label = "TAKE TRASH"
+repeatable = true
+max_repeats = -1
+hide_on_complete = true
+hide_when_inactive = true
+activate_trigger = ""
+requires_item = ""
+action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_8vkfj")])
+
+[sub_resource type="Resource" id="Resource_ubiut"]
+script = ExtResource("9_0ccfs")
+trigger = "ScrapQuest"
+line = "Where is my cat?"
+
+[sub_resource type="Resource" id="Resource_u8rtx"]
+script = ExtResource("9_0ccfs")
+trigger = ""
+line = "Oh! My cat returned!"
+
+[sub_resource type="Resource" id="Resource_wwvia"]
+resource_local_to_scene = true
+script = ExtResource("10_f7o67")
+data = Array[ExtResource("9_0ccfs")]([SubResource("Resource_ubiut"), SubResource("Resource_u8rtx")])
+
+[node name="Building" type="Node3D"]
+script = ExtResource("1_xgfq5")
+pickup_points = NodePath("PickUpPoints")
+items_list = ExtResource("2_hqc6i")
+
+[node name="BuildingBlank" parent="." instance=ExtResource("3_5lpi6")]
+
+[node name="Interactable" parent="." instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.24057, 4.15839, 3.741)
+interaction = SubResource("Resource_xxn41")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="Interactable2" parent="." instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.24057, 9.57959, -2.95)
+interaction = ExtResource("2_sabkf")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="PickUpPoints" type="Node3D" parent="."]
+
+[node name="MeshInstance3D5" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2586, 10, 5.04115)
+mesh = SubResource("BoxMesh_a0tyj")
+interaction = SubResource("Resource_inyu3")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="MeshInstance3D8" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2586, -2.96336, 5.04115)
+mesh = SubResource("BoxMesh_a0tyj")
+interaction = SubResource("Resource_jb4lw")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="MeshInstance3D6" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2586, 2.22469, -7.28264)
+mesh = SubResource("BoxMesh_a0tyj")
+interaction = SubResource("Resource_642k7")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="MeshInstance3D7" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2586, 16.6797, -6.40042)
+mesh = SubResource("BoxMesh_a0tyj")
+interaction = SubResource("Resource_eki1b")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="Neighbor" parent="." instance=ExtResource("8_laf2c")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.08079, 9.39547, -1)
+pop_up_class = "res://Scenes/SpeechBubble.tscn"
+speech_data = SubResource("Resource_wwvia")

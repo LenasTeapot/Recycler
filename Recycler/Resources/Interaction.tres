@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Interaction" load_steps=4 format=3 uid="uid://hjjel312s5no"]
+
+[ext_resource type="Script" path="res://Resources/Interaction.gd" id="1_ftuwf"]
+[ext_resource type="Script" path="res://Resources/Action.gd" id="1_mppsr"]
+
+[sub_resource type="Resource" id="Resource_j8ce5"]
+script = ExtResource("1_mppsr")
+trigger_on_complete = "FedTheCat"
+
+[resource]
+script = ExtResource("1_ftuwf")
+identity = "Test"
+button_label = "Test Action"
+repeatable = true
+max_repeats = -1
+hide_on_complete = false
+hide_when_inactive = true
+activate_trigger = "ScrapQuest"
+requires_item = ""
+action_resourse = Array[ExtResource("1_mppsr")]([SubResource("Resource_j8ce5")])

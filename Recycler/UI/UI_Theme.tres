@@ -1,0 +1,6 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ckeyl4868wqhj"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xhd8c"]
+
+[resource]
+Label/styles/normal = SubResource("StyleBoxEmpty_xhd8c")

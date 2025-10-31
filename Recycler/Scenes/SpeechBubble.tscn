@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://pbg0apmttibs"]
+
+[ext_resource type="Script" path="res://Scripts/SpeechBubble.gd" id="1_gorms"]
+[ext_resource type="Theme" uid="uid://j7q5cjq2akis" path="res://UI/kenneyUI-yellow.tres" id="2_gb1pd"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_gorms")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 21.0
+offset_top = -61.0
+offset_right = 268.0
+offset_bottom = -23.0
+pivot_offset = Vector2(50, 19)
+theme = ExtResource("2_gb1pd")

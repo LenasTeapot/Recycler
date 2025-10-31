@@ -1,0 +1,168 @@
+[gd_scene load_steps=22 format=3 uid="uid://du0fsi2mhwtl6"]
+
+[ext_resource type="PackedScene" uid="uid://bmgmpouwk621s" path="res://Scenes/Interactable.tscn" id="1_04lo1"]
+[ext_resource type="Script" path="res://Scripts/BuildingManager.gd" id="1_xgfq5"]
+[ext_resource type="Script" path="res://Resources/Interaction.gd" id="2_gaags"]
+[ext_resource type="Resource" uid="uid://ctaq34pky6k3k" path="res://Resources/ItemsList.tres" id="2_hqc6i"]
+[ext_resource type="Script" path="res://Resources/Action_MeshSwap.gd" id="2_jkw5e"]
+[ext_resource type="Resource" uid="uid://hjjel312s5no" path="res://Resources/Interaction.tres" id="2_sabkf"]
+[ext_resource type="Script" path="res://Resources/Action_TrashCollect.gd" id="7_s8cxi"]
+[ext_resource type="PackedScene" uid="uid://jkad4oailp2o" path="res://Scenes/Neighbor.tscn" id="8_laf2c"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_h0al0"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_r0m1p"]
+
+[sub_resource type="Resource" id="Resource_tibck"]
+script = ExtResource("2_jkw5e")
+secondary_mesh = SubResource("PrismMesh_r0m1p")
+signal_name = "test_trigger"
+
+[sub_resource type="Resource" id="Resource_xxn41"]
+script = ExtResource("2_gaags")
+identity = "Temp Resource"
+button_label = "Test Temp Res"
+repeatable = false
+max_repeats = 0
+hide_on_complete = false
+hide_when_inactive = false
+active_by_default = true
+triggered_by = ""
+requires_item = "Scrap of Paper"
+action_resourse = SubResource("Resource_tibck")
+
+[sub_resource type="BoxMesh" id="BoxMesh_a0tyj"]
+
+[sub_resource type="Resource" id="Resource_hwbb0"]
+script = ExtResource("7_s8cxi")
+signal_name = ""
+
+[sub_resource type="Resource" id="Resource_cw0t5"]
+resource_local_to_scene = true
+script = ExtResource("2_gaags")
+identity = "Tennant"
+button_label = "TAKE TRASH"
+repeatable = true
+max_repeats = -1
+hide_on_complete = true
+hide_when_inactive = true
+active_by_default = false
+triggered_by = ""
+requires_item = ""
+action_resourse = SubResource("Resource_hwbb0")
+
+[sub_resource type="Resource" id="Resource_5h3ro"]
+script = ExtResource("7_s8cxi")
+signal_name = ""
+
+[sub_resource type="Resource" id="Resource_mf1s6"]
+resource_local_to_scene = true
+script = ExtResource("2_gaags")
+identity = "Tennant"
+button_label = "TAKE TRASH"
+repeatable = true
+max_repeats = -1
+hide_on_complete = true
+hide_when_inactive = true
+active_by_default = false
+triggered_by = ""
+requires_item = ""
+action_resourse = SubResource("Resource_5h3ro")
+
+[sub_resource type="Resource" id="Resource_dav7g"]
+script = ExtResource("7_s8cxi")
+signal_name = ""
+
+[sub_resource type="Resource" id="Resource_a8fad"]
+resource_local_to_scene = true
+script = ExtResource("2_gaags")
+identity = "Tennant"
+button_label = "TAKE TRASH"
+repeatable = true
+max_repeats = -1
+hide_on_complete = true
+hide_when_inactive = true
+active_by_default = false
+triggered_by = ""
+requires_item = ""
+action_resourse = SubResource("Resource_dav7g")
+
+[sub_resource type="Resource" id="Resource_us83o"]
+script = ExtResource("7_s8cxi")
+signal_name = ""
+
+[sub_resource type="Resource" id="Resource_nnh7b"]
+resource_local_to_scene = true
+script = ExtResource("2_gaags")
+identity = "Tennant"
+button_label = "TAKE TRASH"
+repeatable = true
+max_repeats = -1
+hide_on_complete = true
+hide_when_inactive = true
+active_by_default = false
+triggered_by = ""
+requires_item = ""
+action_resourse = SubResource("Resource_us83o")
+
+[node name="Building" type="Node3D"]
+script = ExtResource("1_xgfq5")
+tennants_grp = NodePath("Tennants")
+items_list = ExtResource("2_hqc6i")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 5.98747, 0, 0, 0, 10, 0, -3.35385, 0)
+mesh = SubResource("BoxMesh_h0al0")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 5.98747, 0, 0, 0, 10, 0, 3.38205, 0)
+mesh = SubResource("BoxMesh_h0al0")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 5.98747, 0, 0, 0, 10, 0, 10.118, 0)
+mesh = SubResource("BoxMesh_h0al0")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 5.98747, 0, 0, 0, 10, 0, 16.8539, 0)
+mesh = SubResource("BoxMesh_h0al0")
+
+[node name="Interactable" parent="." instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.24057, 5.27314, -3.76823)
+interaction = SubResource("Resource_xxn41")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="Interactable2" parent="." instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.24057, 1.6462, 3.86991)
+interaction = ExtResource("2_sabkf")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="Tennants" type="Node3D" parent="."]
+
+[node name="MeshInstance3D5" parent="Tennants" instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2586, 10, 2.58942)
+mesh = SubResource("BoxMesh_a0tyj")
+interaction = SubResource("Resource_cw0t5")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="MeshInstance3D8" parent="Tennants" instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2586, -2.96336, 2.58942)
+mesh = SubResource("BoxMesh_a0tyj")
+interaction = SubResource("Resource_mf1s6")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="MeshInstance3D6" parent="Tennants" instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2586, 2.22469, -2.69178)
+mesh = SubResource("BoxMesh_a0tyj")
+interaction = SubResource("Resource_a8fad")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="MeshInstance3D7" parent="Tennants" instance=ExtResource("1_04lo1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.2586, 16.6797, -2.69178)
+mesh = SubResource("BoxMesh_a0tyj")
+interaction = SubResource("Resource_nnh7b")
+pop_up_class = "res://Scenes/InteractableButton.tscn"
+
+[node name="Neighbor" parent="." instance=ExtResource("8_laf2c")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -5.08079, 9.39547, -1)
+pop_up_class = "res://Scenes/SpeechBubble.tscn"
+speech_data = "This is a speech bubble"

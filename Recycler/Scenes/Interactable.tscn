@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmgmpouwk621s"]
+
+[ext_resource type="Script" path="res://Scripts/Interactable.gd" id="1_hv562"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_ll0p1"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_falej"]
+
+[node name="MeshInstance3D5" type="MeshInstance3D"]
+mesh = SubResource("SphereMesh_ll0p1")
+script = ExtResource("1_hv562")
+
+[node name="Interactable_Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interactable_Area3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_falej")
+
+[connection signal="area_entered" from="Interactable_Area3D" to="." method="_on_area_3d_area_entered"]
+[connection signal="area_exited" from="Interactable_Area3D" to="." method="_on_area_3d_area_exited"]

@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://bm4m78xu4hut5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_tfo8w"]
+
+[node name="BuildingBlank" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 5.98747, 0, 0, 0, 20.0789, 0, -3.35385, 0)
+mesh = SubResource("BoxMesh_tfo8w")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 5.98747, 0, 0, 0, 20.0789, 0, 3.38205, 0)
+mesh = SubResource("BoxMesh_tfo8w")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 5.98747, 0, 0, 0, 20.0789, 0, 10.118, 0)
+mesh = SubResource("BoxMesh_tfo8w")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(10, 0, 0, 0, 5.98747, 0, 0, 0, 20.0789, 0, 16.8539, 0)
+mesh = SubResource("BoxMesh_tfo8w")

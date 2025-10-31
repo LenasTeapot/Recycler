@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=3 uid="uid://t43vkwlirqry"]
+
+[ext_resource type="Script" path="res://Scripts/InteractableButton.gd" id="1_twmb5"]
+[ext_resource type="Theme" uid="uid://j7q5cjq2akis" path="res://UI/kenneyUI-yellow.tres" id="2_q5wrd"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_twmb5")
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 10.0
+offset_top = 9.0
+offset_right = 160.0
+offset_bottom = 41.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(75, 16)
+theme = ExtResource("2_q5wrd")
+text = "BUTTON"
+
+[connection signal="mouse_entered" from="Button" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_mouse_exited"]
