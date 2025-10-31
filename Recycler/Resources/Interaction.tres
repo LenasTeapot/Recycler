@@ -9,8 +9,8 @@ trigger_on_complete = "FedTheCat"
 
 [resource]
 script = ExtResource("1_ftuwf")
-identity = "Test"
-button_label = "Test Action"
+identity = "Cat"
+button_label = "Pet the Cat"
 repeatable = true
 max_repeats = -1
 hide_on_complete = false

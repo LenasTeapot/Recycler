@@ -8,10 +8,16 @@ layer = 2
 script = ExtResource("1_v0qj2")
 
 [node name="Panel" type="Panel" parent="."]
-offset_left = 15.0
-offset_top = 574.0
-offset_right = 1124.0
-offset_bottom = 641.0
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -554.5
+offset_top = -67.0
+offset_right = 554.5
+grow_horizontal = 2
+grow_vertical = 0
 theme = ExtResource("2_wh0ct")
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel"]

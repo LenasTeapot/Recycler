@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbdtpmwajox4l"]
+[gd_scene load_steps=14 format=3 uid="uid://cbdtpmwajox4l"]
 
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_32ug3"]
 [ext_resource type="PackedScene" uid="uid://du0fsi2mhwtl6" path="res://Scenes/Building.tscn" id="1_x1kyp"]
 [ext_resource type="PackedScene" uid="uid://cgwyhdkm3jtdd" path="res://Scenes/Vehicle.tscn" id="2_32wy5"]
 [ext_resource type="PackedScene" uid="uid://bm4m78xu4hut5" path="res://Scenes/Building_Blank.tscn" id="2_ms54r"]
@@ -40,7 +41,15 @@ adjustment_saturation = 1.27
 [sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_b6cod"]
 dof_blur_far_distance = 20.0
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="Curve3D" id="Curve3D_dfgtn"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2.17, 26.855, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_32ug3")
 
 [node name="BuildingB" parent="." instance=ExtResource("1_x1kyp")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
@@ -78,11 +87,20 @@ script = ExtResource("3_0fs0c")
 
 [node name="Canvas_Inventory" parent="." instance=ExtResource("4_36l3p")]
 
-[node name="Vehicle" parent="." instance=ExtResource("2_32wy5")]
+[node name="Vehicle" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_32wy5")]
 transform = Transform3D(1.31134e-07, 0, -0.999996, 0, 1, 0, 0.999996, 0, 1.31134e-07, -7.77165, 0, 1.0001)
+path = NodePath("../Path3D2/PathFollow3D")
 
 [node name="Camera3D" type="Camera3D" parent="Vehicle"]
 transform = Transform3D(1, -4.44089e-16, 0, 0, 0.999475, -0.0323875, 1.42109e-14, 0.0323876, 0.999479, 1.19209e-07, 1.76016, 7.99087)
 attributes = SubResource("CameraAttributesPractical_b6cod")
 current = true
 fov = 60.0
+
+[node name="Path3D2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7537, 0, 0)
+curve = SubResource("Curve3D_dfgtn")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
+transform = Transform3D(-4.37114e-08, 0.996751, 0.0805409, 0, 0.0805409, -0.996751, -1, -4.35694e-08, -3.52055e-09, -0.106531, 1.31838, 0)
+progress = 1.32316

@@ -8,6 +8,7 @@ func _ready():
 	Events.connect("ui_close", _on_ui_close)
 	Events.connect("select_ui", _on_select)
 	
+	
 func _on_ui_open(node):
 	if node:
 		print("open ui")
