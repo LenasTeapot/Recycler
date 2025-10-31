@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cbdtpmwajox4l"]
+[gd_scene load_steps=16 format=3 uid="uid://cbdtpmwajox4l"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_32ug3"]
 [ext_resource type="PackedScene" uid="uid://du0fsi2mhwtl6" path="res://Scenes/Building.tscn" id="1_x1kyp"]
@@ -7,18 +7,12 @@
 [ext_resource type="Script" path="res://Scripts/UI_Manager.gd" id="3_0fs0c"]
 [ext_resource type="PackedScene" uid="uid://bc3tttw1q2h7d" path="res://Scenes/canvas_inventory.tscn" id="4_36l3p"]
 [ext_resource type="AudioStream" uid="uid://cp7w6o4bqccr7" path="res://Music/013_Another_August.mp3" id="7_tjtpk"]
+[ext_resource type="PackedScene" uid="uid://it37vtv0lqlx" path="res://Scenes/BuildingDivider.tscn" id="8_wpchk"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_ea2u5"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwaa6"]
 albedo_color = Color(0, 0.607843, 0.839216, 1)
-
-[sub_resource type="Curve3D" id="Curve3D_1htj4"]
-_data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -3, 0, 7, 0, 0, 0, 1.5, 0, 0, 5, 0, 7, 0, 0, 1.5, 0, 0, 0, 7, 0, 5, 0, 0, 0, 0, 0, -1.5, 7, 0, -5, 1.5, 0, 0, 0, 0, 0, 5, 0, -7, 0, 0, 0, 0, 0, 0, -3, 0, -7),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0)
-}
-point_count = 6
 
 [sub_resource type="Sky" id="Sky_5sfjv"]
 
@@ -32,7 +26,6 @@ reflected_light_source = 2
 ssao_enabled = true
 ssil_radius = 1.16
 ssil_sharpness = 1.0
-fog_enabled = true
 fog_light_color = Color(0.619608, 0.792157, 0.94902, 1)
 fog_density = 0.0099
 fog_height_density = 0.2
@@ -44,71 +37,76 @@ dof_blur_far_distance = 20.0
 
 [sub_resource type="Curve3D" id="Curve3D_dfgtn"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.735, 0, 0, 0, 0, 0, 0, 0, 0, 9.995, 26.855, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 25, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
+
+[sub_resource type="BoxMesh" id="BoxMesh_e3aop"]
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_32ug3")
 
 [node name="BuildingB" parent="." instance=ExtResource("1_x1kyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 12)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="BuildingC" parent="." instance=ExtResource("2_ms54r")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, 0, 5, 36)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, 0, 5, 25)
 
 [node name="BuildingA" parent="." instance=ExtResource("2_ms54r")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, 1, 0, 5, -12)
-
-[node name="BuildingA2" parent="." instance=ExtResource("2_ms54r")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 5, -36)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, 1, 0, 5, -25)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, -1.53277, 0)
+transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 83.6294, 2.68535, -0.197235)
 mesh = SubResource("PlaneMesh_ea2u5")
 surface_material_override/0 = SubResource("StandardMaterial3D_pwaa6")
-
-[node name="Path3D" type="Path3D" parent="."]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-visible = false
-curve = SubResource("Curve3D_1htj4")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(0.999996, 0, 0, 0, 1, 0, 0, 0, 0.999996, 7, 0, -1.0001)
-progress = 17.3276
-loop = false
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_c8ay7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(-0.13006, -0.912911, -0.386882, 0.345784, -0.407461, 0.845227, -0.929257, -0.0238473, 0.368664, 0, 0, 12.6341)
+transform = Transform3D(-0.232482, -0.620123, -0.749266, 0.0912096, -0.78088, 0.617987, -0.968314, 0.0753308, 0.238102, 0, 38.5699, 12.6341)
 shadow_enabled = true
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Canvas_PopUps" type="CanvasLayer" parent="."]
 script = ExtResource("3_0fs0c")
 
 [node name="Canvas_Inventory" parent="." instance=ExtResource("4_36l3p")]
 
 [node name="Vehicle" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_32wy5")]
-transform = Transform3D(1.31134e-07, 0, -0.999996, 0, 1, 0, 0.999996, 0, 1.31134e-07, -7.77165, 0, 1.0001)
+transform = Transform3D(1.31134e-07, 0, -0.999996, 0, 1, 0, 0.999996, 0, 1.31134e-07, -6.7216, 14.9512, -1.65235)
 path = NodePath("../Path3D2/PathFollow3D")
+Y_MINMAX = Vector2(6, 30)
+Z_MINMAX = Vector2(-35, 35)
+up_speed = 0.2
+side_speed = 0.2
 
 [node name="Camera3D" type="Camera3D" parent="Vehicle"]
-transform = Transform3D(1, -4.44089e-16, 0, 0, 0.999475, -0.0323875, 1.42109e-14, 0.0323876, 0.999479, 1.19209e-07, 1.76016, 7.99087)
+transform = Transform3D(1, 0, 0, 0, 0.99863, 0.0523362, 0, -0.052336, 0.998633, 0, 2.149, 11.016)
 attributes = SubResource("CameraAttributesPractical_b6cod")
 current = true
-fov = 60.0
+fov = 40.0
 
 [node name="Path3D2" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.7537, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1491, 5.7901, 0)
 curve = SubResource("Curve3D_dfgtn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-4.37114e-08, -0.916396, -0.400273, 0, 0.400273, -0.916396, 1, -4.00569e-08, -1.74965e-08, -1.20576, 1.21165, 0)
+transform = Transform3D(-4.37114e-08, -0.857493, -0.514496, 0, 0.514496, -0.857493, 1, -3.74822e-08, -2.24893e-08, 0.680254, 1.13376, 0)
 progress = 1.32316
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_tjtpk")
+volume_db = -1.0
+pitch_scale = 0.46
 autoplay = true
+
+[node name="MeshInstance3D2" parent="." instance=ExtResource("8_wpchk")]
+
+[node name="MeshInstance3D3" parent="." instance=ExtResource("8_wpchk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.9813)
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(16.1589, 0, 0, 0, 8.53048, 0, 0, 0, 77.7999, 4.71604, 0.77182, -0.0275536)
+mesh = SubResource("BoxMesh_e3aop")
+skeleton = NodePath("../MeshInstance3D")

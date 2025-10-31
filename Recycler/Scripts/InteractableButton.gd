@@ -1,18 +1,28 @@
 extends PopUp
 class_name InteractableButton
 
+const DEFAULT_SOUND = "res://Music/Menu Selection Click.wav"
+
 var interaction : Interaction
 var wiggle_tween : Tween
 const wiggle_amount = 2.0
 const wiggle_time = 0.2
+
+
+@onready var player = $AudioStreamPlayer2D
+
+var is_tweening : bool = false
 
 func _ready():
 	element = $Button
 	super()
 
 func _on_pressed():
+	if is_tweening:
+		return
 	interaction.action.call(my_node)
 	bounce()
+	play_sound()
 	#On close will get called when leaving area
 
 func load_data(node_in):
@@ -31,10 +41,12 @@ func _on_mouse_exited():
 	wiggle_tween.kill()
 
 func bounce():
+	is_tweening = true
 	var bounce_tween = get_tree().create_tween()
 	var start_pos = element.position
 	element.position = Vector2(start_pos.x, start_pos.y - 10)
 	bounce_tween.tween_property(element, "position", start_pos, 0.5).set_trans(Tween.TRANS_BACK)
+	bounce_tween.tween_callback(func(): is_tweening = false)
 
 func wiggle(repeats: int):
 	element.scale = Vector2(1.05, 1.05)
@@ -46,3 +58,16 @@ func wiggle(repeats: int):
 	wiggle_tween.tween_property(
 		element, "rotation_degrees", wiggle_amount, wiggle_time).from(0 - wiggle_amount).set_trans(
 			Tween.TRANS_QUART)
+
+func play_sound():
+	if player.playing:
+		return
+	var sound
+	if interaction.sound == null:
+		sound = load(DEFAULT_SOUND)
+	else:
+		sound = interaction.sound
+	player.stream = sound
+	player.play()
+		
+		

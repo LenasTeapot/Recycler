@@ -13,6 +13,7 @@ class_name Interaction
 @export var activate_trigger : String = ""
 @export var requires_item : String = ""
 @export var action_resourse: Array[Action]
+@export var sound: AudioStream
 
 signal complete_signal 
 var action: Callable = do_action

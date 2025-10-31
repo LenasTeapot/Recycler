@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://it37vtv0lqlx"]
+
+[ext_resource type="Material" uid="uid://7xscbdnger0" path="res://Meshes/Materials/M_White.tres" id="1_ojfgl"]
+[ext_resource type="Material" uid="uid://ta7rqjepukrk" path="res://Meshes/Materials/M_Black.tres" id="2_rm5of"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_o8vvq"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wa7gq"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(31.4271, 3.66848, 0, -3.66848, 31.4271, 0, 0, 0, 2.74529, 8.76955, 13.2988, 12.4781)
+mesh = SubResource("PrismMesh_o8vvq")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = ExtResource("1_ojfgl")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, 7.08576, 24.8651, 12.4957)
+mesh = SubResource("BoxMesh_wa7gq")
+skeleton = NodePath("../MeshInstance3D4")
+surface_material_override/0 = ExtResource("2_rm5of")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, 3.92841, 20.7761, 12.4957)
+mesh = SubResource("BoxMesh_wa7gq")
+skeleton = NodePath("../MeshInstance3D4")
+surface_material_override/0 = ExtResource("2_rm5of")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, -0.266129, 14.2676, 12.4957)
+mesh = SubResource("BoxMesh_wa7gq")
+skeleton = NodePath("../MeshInstance3D4")
+surface_material_override/0 = ExtResource("2_rm5of")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, -3.42864, 9.25795, 12.4957)
+mesh = SubResource("BoxMesh_wa7gq")
+skeleton = NodePath("../MeshInstance3D4")
+surface_material_override/0 = ExtResource("2_rm5of")

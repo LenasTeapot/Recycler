@@ -6,23 +6,34 @@ var x_offset: float = 0
 var y_offset: float = 0
 var z_offset: float = 0
 
-var Y_MINMAX = Vector2(0, 25)
-var Z_MINMAX = Vector2(-30, 30)
-var up_speed: float = 0.25
-var side_speed: float = 0.25
+@export var Y_MINMAX = Vector2(0, 25)
+@export var Z_MINMAX = Vector2(-30, 30)
+@export var up_speed: float = 0.25
+@export var side_speed: float = 0.25
+
+var ramp_up_mod = 0
+
+func _ready():
+	var curve = path.get_parent()
+	if curve is Path3D:
+		position = curve.curve.get_point_position(0)
 
 func _process(delta):
+	if not Input.is_anything_pressed():
+		ramp_up_mod = 0
+	else:
+		ramp_up_mod = clampf(ramp_up_mod + 0.05, 0.0, 1.0)
 	if Input.is_action_pressed("Sprint"):
 		up_speed += 0.05
 		side_speed += 0.05
 	if Input.is_action_pressed("Up"):
-		y_offset += 1 * up_speed
+		y_offset += 1 * (up_speed * ramp_up_mod)
 	if Input.is_action_pressed("Down"):
-		y_offset -= 1 * up_speed
+		y_offset -= 1 * (up_speed * ramp_up_mod)
 	if Input.is_action_pressed("Left"):
-		z_offset -= 1 * side_speed
+		z_offset -= 1 * (side_speed * ramp_up_mod)
 	if Input.is_action_pressed("Right"):
-		z_offset += 1 * side_speed
+		z_offset += 1 * (side_speed * ramp_up_mod)
 	if Input.is_action_just_pressed("Select"):
 		Events.emit_signal("select_ui")
 		
