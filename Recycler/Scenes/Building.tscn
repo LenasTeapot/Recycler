@@ -52,7 +52,7 @@ action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Res
 script = ExtResource("7_s8cxi")
 trigger_on_complete = ""
 
-[sub_resource type="Resource" id="Resource_4168y"]
+[sub_resource type="Resource" id="Resource_pr07n"]
 resource_local_to_scene = true
 script = ExtResource("2_gaags")
 identity = "Tennant"
@@ -65,7 +65,7 @@ activate_trigger = ""
 requires_item = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_y1tmw")])
 
-[sub_resource type="Resource" id="Resource_jv6ex"]
+[sub_resource type="Resource" id="Resource_l1pg7"]
 resource_local_to_scene = true
 script = ExtResource("2_gaags")
 identity = "Tennant"
@@ -82,7 +82,7 @@ action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Res
 script = ExtResource("7_s8cxi")
 trigger_on_complete = ""
 
-[sub_resource type="Resource" id="Resource_qxlkd"]
+[sub_resource type="Resource" id="Resource_xjnfd"]
 resource_local_to_scene = true
 script = ExtResource("2_gaags")
 identity = "Tennant"
@@ -95,7 +95,7 @@ activate_trigger = ""
 requires_item = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_8vkfj")])
 
-[sub_resource type="Resource" id="Resource_6lfn1"]
+[sub_resource type="Resource" id="Resource_lrl4u"]
 resource_local_to_scene = true
 script = ExtResource("2_gaags")
 identity = "Tennant"
@@ -118,7 +118,7 @@ script = ExtResource("9_0ccfs")
 trigger = ""
 line = "Oh! My cat returned!"
 
-[sub_resource type="Resource" id="Resource_djpli"]
+[sub_resource type="Resource" id="Resource_rjuw2"]
 resource_local_to_scene = true
 script = ExtResource("10_f7o67")
 data = Array[ExtResource("9_0ccfs")]([SubResource("Resource_ubiut"), SubResource("Resource_u8rtx")])
@@ -150,28 +150,28 @@ pop_up_class = "res://Scenes/InteractableButton.tscn"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0260477, 13.4394, 9.79198)
 mesh = SubResource("BoxMesh_a0tyj")
 surface_material_override/0 = ExtResource("12_bpr5n")
-interaction = SubResource("Resource_4168y")
+interaction = SubResource("Resource_pr07n")
 pop_up_class = "res://Scenes/InteractableButton.tscn"
 
 [node name="MeshInstance3D8" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76317, 1.06724, 8.81915)
 mesh = SubResource("BoxMesh_a0tyj")
 surface_material_override/0 = ExtResource("12_bpr5n")
-interaction = SubResource("Resource_jv6ex")
+interaction = SubResource("Resource_l1pg7")
 pop_up_class = "res://Scenes/InteractableButton.tscn"
 
 [node name="MeshInstance3D6" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78736, 7.22078, -8.10471)
 mesh = SubResource("BoxMesh_a0tyj")
 surface_material_override/0 = ExtResource("12_bpr5n")
-interaction = SubResource("Resource_qxlkd")
+interaction = SubResource("Resource_xjnfd")
 pop_up_class = "res://Scenes/InteractableButton.tscn"
 
 [node name="MeshInstance3D7" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05465, 19.0339, -9.48662)
 mesh = SubResource("BoxMesh_a0tyj")
 surface_material_override/0 = ExtResource("12_bpr5n")
-interaction = SubResource("Resource_6lfn1")
+interaction = SubResource("Resource_lrl4u")
 pop_up_class = "res://Scenes/InteractableButton.tscn"
 
 [node name="Neighbor" parent="." instance=ExtResource("8_laf2c")]
@@ -179,4 +179,4 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.019
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("10_hoeky")
 pop_up_class = "res://Scenes/SpeechBubble.tscn"
-speech_data = SubResource("Resource_djpli")
+speech_data = SubResource("Resource_rjuw2")

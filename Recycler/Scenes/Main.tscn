@@ -51,10 +51,10 @@ script = ExtResource("1_32ug3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="BuildingC" parent="." instance=ExtResource("2_ms54r")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, 0, 5, 25)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, 0, 5, 30)
 
 [node name="BuildingA" parent="." instance=ExtResource("2_ms54r")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, 1, 0, 5, -25)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, 1, 0, 5, -30)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 83.6294, 2.68535, -0.197235)
@@ -101,7 +101,8 @@ volume_db = -1.0
 pitch_scale = 0.46
 autoplay = true
 
-[node name="MeshInstance3D2" parent="." instance=ExtResource("8_wpchk")]
+[node name="MeshInstance3D6" parent="." instance=ExtResource("8_wpchk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
 
 [node name="MeshInstance3D3" parent="." instance=ExtResource("8_wpchk")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.9813)

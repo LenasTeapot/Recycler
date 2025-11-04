@@ -15,8 +15,14 @@ mesh = SubResource("PrismMesh_o8vvq")
 skeleton = NodePath("../MeshInstance3D")
 surface_material_override/0 = ExtResource("1_ojfgl")
 
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(31.4271, 3.66848, 0, -3.66848, 31.4271, 0, 0, 0, 2.74529, 8.77, 13.299, 7.5)
+mesh = SubResource("PrismMesh_o8vvq")
+skeleton = NodePath("../MeshInstance3D")
+surface_material_override/0 = ExtResource("1_ojfgl")
+
 [node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, 7.08576, 24.8651, 12.4957)
+transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, 7.08576, 24.8651, 7.48154)
 mesh = SubResource("BoxMesh_wa7gq")
 skeleton = NodePath("../MeshInstance3D4")
 surface_material_override/0 = ExtResource("2_rm5of")
@@ -28,7 +34,7 @@ skeleton = NodePath("../MeshInstance3D4")
 surface_material_override/0 = ExtResource("2_rm5of")
 
 [node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, -0.266129, 14.2676, 12.4957)
+transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, -0.266129, 14.2676, 7.48154)
 mesh = SubResource("BoxMesh_wa7gq")
 skeleton = NodePath("../MeshInstance3D4")
 surface_material_override/0 = ExtResource("2_rm5of")
@@ -38,3 +44,21 @@ transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2
 mesh = SubResource("BoxMesh_wa7gq")
 skeleton = NodePath("../MeshInstance3D4")
 surface_material_override/0 = ExtResource("2_rm5of")
+
+[node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
+transform = Transform3D(12.869, 0, 0, 0, 6.43952, 0, 0, 0, 2.60345, 6.17749, 7.33382, 10.012)
+mesh = SubResource("BoxMesh_wa7gq")
+skeleton = NodePath("../MeshInstance3D4")
+surface_material_override/0 = ExtResource("1_ojfgl")
+
+[node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
+transform = Transform3D(12.869, 0, 0, 0, 6.43952, 0, 0, 0, 2.60345, 10.7151, 15.9861, 10.012)
+mesh = SubResource("BoxMesh_wa7gq")
+skeleton = NodePath("../MeshInstance3D4")
+surface_material_override/0 = ExtResource("1_ojfgl")
+
+[node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
+transform = Transform3D(38.6069, 0, 0, 0, 6.43952, 0, 0, 0, 7.59796, 29.7991, 25.542, 10.012)
+mesh = SubResource("BoxMesh_wa7gq")
+skeleton = NodePath("../MeshInstance3D4")
+surface_material_override/0 = ExtResource("1_ojfgl")
