@@ -17,13 +17,15 @@ func _init():
 func set_up():
 	for item in data:
 		dict[item.trigger] = item
-	print(dict)
+		if item.trigger == "":
+			item.complete = true
 	
 func get_current_line():
+	var line = ""
 	for item in dict:
-		if dict[item].complete == false:
-			return dict[item].line
-	return ""
+		if dict[item].complete == true:
+			line = dict[item].line
+	return line
 
 func _on_quest_complete(quest):
 	if dict.has(quest):	

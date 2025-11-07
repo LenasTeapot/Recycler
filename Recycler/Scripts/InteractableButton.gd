@@ -26,8 +26,8 @@ func _on_pressed():
 	#On close will get called when leaving area
 
 func load_data(node_in):
+	super(node_in)
 	interaction = node_in.interaction
-	my_node = node_in
 	element.text = interaction.button_label
 	name = interaction.identity
 	element.connect("pressed", _on_pressed)

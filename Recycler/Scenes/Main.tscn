@@ -1,18 +1,19 @@
-[gd_scene load_steps=16 format=3 uid="uid://cbdtpmwajox4l"]
+[gd_scene load_steps=24 format=3 uid="uid://cbdtpmwajox4l"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_32ug3"]
-[ext_resource type="PackedScene" uid="uid://du0fsi2mhwtl6" path="res://Scenes/Building.tscn" id="1_x1kyp"]
+[ext_resource type="PackedScene" uid="uid://du0fsi2mhwtl6" path="res://Scenes/BuildingB.tscn" id="1_x1kyp"]
 [ext_resource type="PackedScene" uid="uid://cgwyhdkm3jtdd" path="res://Scenes/Vehicle.tscn" id="2_32wy5"]
 [ext_resource type="PackedScene" uid="uid://bm4m78xu4hut5" path="res://Scenes/Building_Blank.tscn" id="2_ms54r"]
 [ext_resource type="Script" path="res://Scripts/UI_Manager.gd" id="3_0fs0c"]
+[ext_resource type="PackedScene" uid="uid://jkad4oailp2o" path="res://Scenes/Neighbor.tscn" id="3_1xceb"]
 [ext_resource type="PackedScene" uid="uid://bc3tttw1q2h7d" path="res://Scenes/canvas_inventory.tscn" id="4_36l3p"]
+[ext_resource type="Material" uid="uid://dopok0aev4pdr" path="res://Meshes/Materials/M_Orange.tres" id="4_vco24"]
 [ext_resource type="AudioStream" uid="uid://cp7w6o4bqccr7" path="res://Music/013_Another_August.mp3" id="7_tjtpk"]
 [ext_resource type="PackedScene" uid="uid://it37vtv0lqlx" path="res://Scenes/BuildingDivider.tscn" id="8_wpchk"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_ea2u5"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwaa6"]
-albedo_color = Color(0, 0.607843, 0.839216, 1)
+[ext_resource type="PackedScene" uid="uid://cetfr4bdme11c" path="res://Scenes/Rooftop.tscn" id="11_05aaq"]
+[ext_resource type="Script" path="res://Resources/Step.gd" id="12_b3cp6"]
+[ext_resource type="PackedScene" uid="uid://baiyjs8fbgswq" path="res://Scenes/Panel_Dome.tscn" id="12_yabfs"]
+[ext_resource type="Script" path="res://Resources/SpeechData.gd" id="13_ivpit"]
 
 [sub_resource type="Sky" id="Sky_5sfjv"]
 
@@ -26,9 +27,9 @@ reflected_light_source = 2
 ssao_enabled = true
 ssil_radius = 1.16
 ssil_sharpness = 1.0
+fog_enabled = true
 fog_light_color = Color(0.619608, 0.792157, 0.94902, 1)
-fog_density = 0.0099
-fog_height_density = 0.2
+fog_density = 0.001
 adjustment_contrast = 0.82
 adjustment_saturation = 1.27
 
@@ -37,36 +38,39 @@ dof_blur_far_distance = 20.0
 
 [sub_resource type="Curve3D" id="Curve3D_dfgtn"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 15, 25, 0),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 45, 130, 0),
 "tilts": PackedFloat32Array(0, 0)
 }
 point_count = 2
 
-[sub_resource type="BoxMesh" id="BoxMesh_e3aop"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_ea2u5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwaa6"]
+albedo_color = Color(0, 0.607843, 0.839216, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aw677"]
+
+[sub_resource type="Resource" id="Resource_oxj6d"]
+script = ExtResource("12_b3cp6")
+trigger = ""
+line = "Hey there!"
+complete = false
+
+[sub_resource type="Resource" id="Resource_bg66k"]
+script = ExtResource("13_ivpit")
+data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_oxj6d")])
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_32ug3")
-
-[node name="BuildingB" parent="." instance=ExtResource("1_x1kyp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-
-[node name="BuildingC" parent="." instance=ExtResource("2_ms54r")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, -8.74228e-08, 0, 1, 0, 5, 30)
-
-[node name="BuildingA" parent="." instance=ExtResource("2_ms54r")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, 8.74228e-08, 0, 1, 0, 5, -30)
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, 100, 0, 0, 0, 100, 83.6294, 2.68535, -0.197235)
-mesh = SubResource("PlaneMesh_ea2u5")
-surface_material_override/0 = SubResource("StandardMaterial3D_pwaa6")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_c8ay7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(-0.232482, -0.620123, -0.749266, 0.0912096, -0.78088, 0.617987, -0.968314, 0.0753308, 0.238102, 0, 38.5699, 12.6341)
+transform = Transform3D(-0.155731, -0.927482, -0.33989, 0.195231, -0.3662, 0.909826, -0.968314, 0.0753309, 0.238101, 0, 38.5699, 12.6341)
 shadow_enabled = true
+shadow_opacity = 0.85
+directional_shadow_max_distance = 500.0
 
 [node name="Canvas_PopUps" type="CanvasLayer" parent="."]
 script = ExtResource("3_0fs0c")
@@ -74,25 +78,25 @@ script = ExtResource("3_0fs0c")
 [node name="Canvas_Inventory" parent="." instance=ExtResource("4_36l3p")]
 
 [node name="Vehicle" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_32wy5")]
-transform = Transform3D(1.31134e-07, 0, -0.999996, 0, 1, 0, 0.999996, 0, 1.31134e-07, -6.7216, 14.9512, -1.65235)
+transform = Transform3D(1.31134e-07, 0, -0.999996, 0, 1, 0, 0.999996, 0, 1.31134e-07, -76.7046, 22.0562, -1.65235)
 path = NodePath("../Path3D2/PathFollow3D")
-Y_MINMAX = Vector2(6, 30)
-Z_MINMAX = Vector2(-35, 35)
-up_speed = 0.2
-side_speed = 0.2
+Y_MINMAX = Vector2(0, 150)
+Z_MINMAX = Vector2(-230, 230)
+up_speed = 1.5
+side_speed = 1.5
 
 [node name="Camera3D" type="Camera3D" parent="Vehicle"]
-transform = Transform3D(1, 0, 0, 0, 0.99863, 0.0523362, 0, -0.052336, 0.998633, 0, 2.149, 11.016)
+transform = Transform3D(1, 2.66454e-15, -5.68434e-14, 0, 0.99863, 0.0523358, 5.68434e-14, -0.052336, 0.998634, 0, 14, 80)
 attributes = SubResource("CameraAttributesPractical_b6cod")
 current = true
 fov = 40.0
 
 [node name="Path3D2" type="Path3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1491, 5.7901, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.2088, 9.32824, 0)
 curve = SubResource("Curve3D_dfgtn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-4.37114e-08, -0.857493, -0.514496, 0, 0.514496, -0.857493, 1, -3.74822e-08, -2.24893e-08, 0.680254, 1.13376, 0)
+transform = Transform3D(-4.37114e-08, -0.944986, -0.32711, 0, 0.32711, -0.944986, 1, -4.13066e-08, -1.42984e-08, 0.432504, 1.24946, 0)
 progress = 1.32316
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -101,13 +105,59 @@ volume_db = -1.0
 pitch_scale = 0.46
 autoplay = true
 
-[node name="MeshInstance3D6" parent="." instance=ExtResource("8_wpchk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5)
+[node name="waterplane" type="MeshInstance3D" parent="."]
+transform = Transform3D(160, 0, 0, 0, 100, 0, 0, 0, 500, 0, -20, 0)
+mesh = SubResource("PlaneMesh_ea2u5")
+surface_material_override/0 = SubResource("StandardMaterial3D_pwaa6")
 
-[node name="MeshInstance3D3" parent="." instance=ExtResource("8_wpchk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -24.9813)
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(80, 0, 0, 0, 20, 0, 0, 0, 120, -25, -21, 0)
+mesh = SubResource("BoxMesh_aw677")
+skeleton = NodePath("../waterplane")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
-transform = Transform3D(16.1589, 0, 0, 0, 8.53048, 0, 0, 0, 77.7999, 4.71604, 0.77182, -0.0275536)
-mesh = SubResource("BoxMesh_e3aop")
-skeleton = NodePath("../MeshInstance3D")
+[node name="Building" type="Node3D" parent="."]
+
+[node name="Stairwell" parent="Building" instance=ExtResource("8_wpchk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 5, 86)
+
+[node name="Stairwell2" parent="Building" instance=ExtResource("8_wpchk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, -86)
+
+[node name="Stairwell3" parent="Building" instance=ExtResource("8_wpchk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, -258)
+
+[node name="Stairwell4" parent="Building" instance=ExtResource("8_wpchk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, 258)
+
+[node name="BuildingA" parent="Building" instance=ExtResource("2_ms54r")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, -172)
+
+[node name="Neighbor" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, 6, 41, 4)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor2" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -15, 106, -12)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="BuildingB" parent="Building" instance=ExtResource("1_x1kyp")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 5, 0)
+
+[node name="BuildingC" parent="Building" instance=ExtResource("2_ms54r")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 5, 172)
+
+[node name="Rooftop" parent="Building" instance=ExtResource("11_05aaq")]
+
+[node name="Neighbor" parent="Building" instance=ExtResource("3_1xceb")]
+transform = Transform3D(8.5, 0, 0, 0, 8.5, 0, 0, 0, 8.5, 56, 141, -49)
+material_override = ExtResource("4_vco24")
+pop_up_class = "res://Scenes/SpeechBubble.tscn"
+speech_data = SubResource("Resource_bg66k")
+
+[node name="Node3D" parent="." instance=ExtResource("12_yabfs")]
+transform = Transform3D(-3.09086e-08, -0.707107, -0.707107, 1, 1.91069e-15, -4.37114e-08, 3.09086e-08, -0.707107, 0.707107, 16, 44, -325)
+
+[node name="Node3D2" parent="." instance=ExtResource("12_yabfs")]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, 1, -4.37114e-08, 0, 3.09086e-08, 0.707107, 0.707107, 16, 44, 325)

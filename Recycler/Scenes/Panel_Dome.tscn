@@ -1,0 +1,513 @@
+[gd_scene load_steps=9 format=3 uid="uid://baiyjs8fbgswq"]
+
+[ext_resource type="ArrayMesh" uid="uid://be8es1b2jesyn" path="res://Meshes/SolarPanel_01.obj" id="1_s0lfg"]
+[ext_resource type="Material" uid="uid://bg7n2p1xwuhm3" path="res://Meshes/Materials/M_Green.tres" id="2_yeajb"]
+[ext_resource type="Material" uid="uid://7xscbdnger0" path="res://Meshes/Materials/M_White.tres" id="3_3c7jh"]
+[ext_resource type="Material" uid="uid://cawbjfjyg6o3r" path="res://Meshes/Materials/M_Grey.tres" id="4_15h5u"]
+[ext_resource type="Material" uid="uid://bngaani7tcu28" path="res://Meshes/Materials/M_Blue.tres" id="5_o4bsl"]
+[ext_resource type="Material" uid="uid://c5jrdcs0x51u3" path="res://Meshes/Materials/M_Red.tres" id="5_vxc37"]
+[ext_resource type="Material" uid="uid://dopok0aev4pdr" path="res://Meshes/Materials/M_Orange.tres" id="6_2fuxb"]
+[ext_resource type="Material" uid="uid://cp1cdynn5tgx2" path="res://Meshes/Materials/M_Yellow.tres" id="7_yaqm3"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="SolarPanel01" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18, 0, 0)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel04" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -9, -2.5, -15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel05" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 9, -2.5, -15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel06" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, -9, -2.5, 15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel14" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -54, 0, 0)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel15" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -45, -2.5, -15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel16" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, -45, -2.5, 15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel07" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 9, -2.5, 15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel03" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18, 0, 0)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel17" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 45, -2.5, -15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel18" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 45, -2.5, 15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel19" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54, 0, 0)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel02" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("6_2fuxb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel08" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 1, 0)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel09" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, -27, -2.5, 15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel10" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -27, -2.5, -15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel20" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72, 1, 0)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel21" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, -63, -2.5, 15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel22" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, -63, -2.5, -15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel11" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 36, 1, 0)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel12" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 27, -2.5, 15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 27, -2.5, -15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel23" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72, 1, 0)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel44" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.965926, -0.258819, 0, 0.258819, 0.965926, 0, 0, 0, 1, -18, 58, 0)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel45" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, -0.707107, 0, 0.707107, 0.707107, 0, 0, 0, 1, -49, 40, 0)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel46" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 0, 0, 1, 18, 58, 0)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel47" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 0, 0, 1, 49, 40, 0)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel48" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 60, 0)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("6_2fuxb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel49" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866025, -0.5, 0, 0.5, 0.866025, 0, 0, 0, 1, -35, 51, 0)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel50" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, -60, 26, 0)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel51" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.866025, 0.5, 0, -0.5, 0.866025, 0, 0, 0, 1, 35, 51, 0)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel52" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, 60, 26, 0)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel53" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.482963, -0.129409, -0.866026, 0.258819, 0.965926, -8.88179e-16, 0.836516, -0.224144, 0.5, -9, 58, -15.5885)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel54" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.353553, -0.353553, -0.866025, 0.707107, 0.707107, 0, 0.612372, -0.612372, 0.5, -24.5, 40, -42.4352)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel55" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.482963, 0.129409, -0.866026, -0.258819, 0.965926, 8.88179e-16, 0.836516, 0.224144, 0.5, 9, 58, 15.5885)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel56" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.353553, 0.353553, -0.866025, -0.707107, 0.707107, 0, 0.612372, 0.612372, 0.5, 24.5, 40, 42.4352)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel58" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.433013, -0.25, -0.866025, 0.5, 0.866025, 0, 0.75, -0.433013, 0.5, -17.5, 51, -30.3109)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel59" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, -0.433013, -0.866025, 0.866025, 0.5, 3.55271e-15, 0.433013, -0.75, 0.5, -30, 26, -51.9615)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel60" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.433013, 0.25, -0.866025, -0.5, 0.866025, 0, 0.75, 0.433013, 0.5, 17.5, 51, 30.3109)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel61" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.25, 0.433013, -0.866025, -0.866025, 0.5, -3.55271e-15, 0.433013, 0.75, 0.5, 30, 26, 51.9615)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel57" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.482963, 0.12941, -0.866026, 0.258819, 0.965926, 1.68975e-08, 0.836516, -0.224144, -0.5, 9, 58, -15.5885)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel62" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.353553, 0.353553, -0.866025, 0.707107, 0.707107, 0, 0.612372, -0.612372, -0.5, 24.5, 40, -42.4352)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel63" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.482963, -0.12941, -0.866026, -0.258819, 0.965926, -1.68975e-08, 0.836516, 0.224144, -0.5, -9, 58, 15.5885)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel64" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.353553, -0.353553, -0.866025, -0.707107, 0.707107, 0, 0.612372, 0.612372, -0.5, -24.5, 40, 42.4352)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel65" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.433013, 0.25, -0.866025, 0.5, 0.866025, 1.29048e-08, 0.75, -0.433013, -0.5, 17.5, 51, -30.3109)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel66" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.25, 0.433013, -0.866025, 0.866025, 0.5, 2.08903e-08, 0.433013, -0.75, -0.5, 30, 26, -51.9615)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel67" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.433013, -0.25, -0.866025, -0.5, 0.866025, -1.29048e-08, 0.75, 0.433013, -0.5, -17.5, 51, 30.3109)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel68" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.25, -0.433013, -0.866025, -0.866025, 0.5, -2.08903e-08, 0.433013, 0.75, -0.5, -30, 26, 51.9615)
+visible = false
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel26" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -18, -9, -30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel27" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -54, -9, -30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel28" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 18, -9, -30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel29" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 54, -9, -30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel30" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, -8, -30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("6_2fuxb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel31" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -36, -8, -30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel32" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, -72, -8, -30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel33" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 36, -8, -30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel34" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 72, -8, -30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel35" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 18, -9, 30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel36" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 54, -9, 30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel37" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, -18, -9, 30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("2_yeajb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel38" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, -54, -9, 30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_vxc37")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel39" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 0, -8, 30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("6_2fuxb")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel40" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 36, -8, 30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel41" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, 72, -8, 30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel42" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, -36, -8, 30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("5_o4bsl")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel43" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 4.37114e-08, -7.57103e-08, 0, 0.866025, 0.5, 8.74228e-08, 0.5, -0.866025, -72, -8, 30)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel24" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, -0.258819, 0, 0.258819, 0.965926, 63, -2.5, 15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")
+
+[node name="SolarPanel25" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 63, -2.5, -15.5)
+mesh = ExtResource("1_s0lfg")
+surface_material_override/0 = ExtResource("7_yaqm3")
+surface_material_override/1 = ExtResource("3_3c7jh")
+surface_material_override/2 = ExtResource("4_15h5u")

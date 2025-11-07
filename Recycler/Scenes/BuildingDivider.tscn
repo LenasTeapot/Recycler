@@ -1,64 +1,68 @@
-[gd_scene load_steps=5 format=3 uid="uid://it37vtv0lqlx"]
+[gd_scene load_steps=8 format=3 uid="uid://it37vtv0lqlx"]
 
 [ext_resource type="Material" uid="uid://7xscbdnger0" path="res://Meshes/Materials/M_White.tres" id="1_ojfgl"]
-[ext_resource type="Material" uid="uid://ta7rqjepukrk" path="res://Meshes/Materials/M_Black.tres" id="2_rm5of"]
+[ext_resource type="ArrayMesh" uid="uid://xt5s4netmrjv" path="res://Meshes/Stairwell.obj" id="2_5cmpo"]
+[ext_resource type="ArrayMesh" uid="uid://be8es1b2jesyn" path="res://Meshes/SolarPanel_01.obj" id="3_olsq6"]
+[ext_resource type="Material" uid="uid://bg7n2p1xwuhm3" path="res://Meshes/Materials/M_Green.tres" id="4_evw65"]
+[ext_resource type="Material" uid="uid://cawbjfjyg6o3r" path="res://Meshes/Materials/M_Grey.tres" id="5_0ddgj"]
+[ext_resource type="Material" uid="uid://bngaani7tcu28" path="res://Meshes/Materials/M_Blue.tres" id="6_2reuu"]
 
-[sub_resource type="PrismMesh" id="PrismMesh_o8vvq"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_wa7gq"]
+[sub_resource type="BoxMesh" id="BoxMesh_his7g"]
 
 [node name="Node3D" type="Node3D"]
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(31.4271, 3.66848, 0, -3.66848, 31.4271, 0, 0, 0, 2.74529, 8.76955, 13.2988, 12.4781)
-mesh = SubResource("PrismMesh_o8vvq")
-skeleton = NodePath("../MeshInstance3D")
-surface_material_override/0 = ExtResource("1_ojfgl")
-
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
-transform = Transform3D(31.4271, 3.66848, 0, -3.66848, 31.4271, 0, 0, 0, 2.74529, 8.77, 13.299, 7.5)
-mesh = SubResource("PrismMesh_o8vvq")
-skeleton = NodePath("../MeshInstance3D")
-surface_material_override/0 = ExtResource("1_ojfgl")
-
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, 7.08576, 24.8651, 7.48154)
-mesh = SubResource("BoxMesh_wa7gq")
-skeleton = NodePath("../MeshInstance3D4")
-surface_material_override/0 = ExtResource("2_rm5of")
-
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, 3.92841, 20.7761, 12.4957)
-mesh = SubResource("BoxMesh_wa7gq")
-skeleton = NodePath("../MeshInstance3D4")
-surface_material_override/0 = ExtResource("2_rm5of")
-
-[node name="MeshInstance3D8" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, -0.266129, 14.2676, 7.48154)
-mesh = SubResource("BoxMesh_wa7gq")
-skeleton = NodePath("../MeshInstance3D4")
-surface_material_override/0 = ExtResource("2_rm5of")
-
-[node name="MeshInstance3D9" type="MeshInstance3D" parent="."]
-transform = Transform3D(2.79446, 0.229764, 2.4321e-07, 3.62869, -0.176942, 0, -2.443e-07, -2.00866e-08, 2.782, -3.42864, 9.25795, 12.4957)
-mesh = SubResource("BoxMesh_wa7gq")
-skeleton = NodePath("../MeshInstance3D4")
-surface_material_override/0 = ExtResource("2_rm5of")
-
 [node name="MeshInstance3D10" type="MeshInstance3D" parent="."]
-transform = Transform3D(12.869, 0, 0, 0, 6.43952, 0, 0, 0, 2.60345, 6.17749, 7.33382, 10.012)
-mesh = SubResource("BoxMesh_wa7gq")
+mesh = ExtResource("2_5cmpo")
 skeleton = NodePath("../MeshInstance3D4")
 surface_material_override/0 = ExtResource("1_ojfgl")
 
 [node name="MeshInstance3D11" type="MeshInstance3D" parent="."]
-transform = Transform3D(12.869, 0, 0, 0, 6.43952, 0, 0, 0, 2.60345, 10.7151, 15.9861, 10.012)
-mesh = SubResource("BoxMesh_wa7gq")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12, 30, 0)
+mesh = ExtResource("2_5cmpo")
 skeleton = NodePath("../MeshInstance3D4")
 surface_material_override/0 = ExtResource("1_ojfgl")
 
 [node name="MeshInstance3D12" type="MeshInstance3D" parent="."]
-transform = Transform3D(38.6069, 0, 0, 0, 6.43952, 0, 0, 0, 7.59796, 29.7991, 25.542, 10.012)
-mesh = SubResource("BoxMesh_wa7gq")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24, 60, 0)
+mesh = ExtResource("2_5cmpo")
 skeleton = NodePath("../MeshInstance3D4")
 surface_material_override/0 = ExtResource("1_ojfgl")
+
+[node name="MeshInstance3D13" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -36, 90, 0)
+mesh = ExtResource("2_5cmpo")
+skeleton = NodePath("../MeshInstance3D4")
+surface_material_override/0 = ExtResource("1_ojfgl")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(60, 0, 0, 0, 27, 0, 0, 0, 52, 3.1738, -12.7276, 0)
+mesh = SubResource("BoxMesh_his7g")
+skeleton = NodePath("../MeshInstance3D13")
+
+[node name="SolarPanel01" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.939693, 0.34202, 0, 0.34202, -0.939693, -1, -4.10753e-08, -1.49502e-08, 45.3571, 6.52082, -10.4162)
+mesh = ExtResource("3_olsq6")
+surface_material_override/0 = ExtResource("4_evw65")
+surface_material_override/1 = ExtResource("1_ojfgl")
+surface_material_override/2 = ExtResource("5_0ddgj")
+
+[node name="SolarPanel02" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.939693, 0.34202, 0, 0.34202, -0.939693, -1, -4.10753e-08, -1.49502e-08, 33.8592, 35.155, 10.406)
+mesh = ExtResource("3_olsq6")
+surface_material_override/0 = ExtResource("6_2reuu")
+surface_material_override/1 = ExtResource("1_ojfgl")
+surface_material_override/2 = ExtResource("5_0ddgj")
+
+[node name="SolarPanel03" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.939693, 0.34202, 0, 0.34202, -0.939693, -1, -4.10753e-08, -1.49502e-08, 22.0697, 64.8807, -10.4162)
+mesh = ExtResource("3_olsq6")
+surface_material_override/0 = ExtResource("4_evw65")
+surface_material_override/1 = ExtResource("1_ojfgl")
+surface_material_override/2 = ExtResource("5_0ddgj")
+
+[node name="SolarPanel04" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0.939693, 0.34202, 0, 0.34202, -0.939693, -1, -4.10753e-08, -1.49502e-08, 9.67551, 95.5134, 10.406)
+mesh = ExtResource("3_olsq6")
+surface_material_override/0 = ExtResource("6_2reuu")
+surface_material_override/1 = ExtResource("1_ojfgl")
+surface_material_override/2 = ExtResource("5_0ddgj")

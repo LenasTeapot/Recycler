@@ -37,7 +37,7 @@ trigger_on_complete = ""
 [sub_resource type="Resource" id="Resource_xxn41"]
 script = ExtResource("2_gaags")
 identity = "Temp Resource"
-button_label = "Scrap Test"
+button_label = "Scrap Quest"
 repeatable = false
 max_repeats = 0
 hide_on_complete = false
@@ -52,7 +52,7 @@ action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Res
 script = ExtResource("7_s8cxi")
 trigger_on_complete = ""
 
-[sub_resource type="Resource" id="Resource_pr07n"]
+[sub_resource type="Resource" id="Resource_1aqmr"]
 resource_local_to_scene = true
 script = ExtResource("2_gaags")
 identity = "Tennant"
@@ -65,7 +65,7 @@ activate_trigger = ""
 requires_item = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_y1tmw")])
 
-[sub_resource type="Resource" id="Resource_l1pg7"]
+[sub_resource type="Resource" id="Resource_ghutt"]
 resource_local_to_scene = true
 script = ExtResource("2_gaags")
 identity = "Tennant"
@@ -82,7 +82,7 @@ action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Res
 script = ExtResource("7_s8cxi")
 trigger_on_complete = ""
 
-[sub_resource type="Resource" id="Resource_xjnfd"]
+[sub_resource type="Resource" id="Resource_mi7uf"]
 resource_local_to_scene = true
 script = ExtResource("2_gaags")
 identity = "Tennant"
@@ -95,7 +95,7 @@ activate_trigger = ""
 requires_item = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_8vkfj")])
 
-[sub_resource type="Resource" id="Resource_lrl4u"]
+[sub_resource type="Resource" id="Resource_yc3iw"]
 resource_local_to_scene = true
 script = ExtResource("2_gaags")
 identity = "Tennant"
@@ -110,15 +110,17 @@ action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Res
 
 [sub_resource type="Resource" id="Resource_ubiut"]
 script = ExtResource("9_0ccfs")
-trigger = "ScrapQuest"
+trigger = ""
 line = "Where is my cat?"
+complete = false
 
 [sub_resource type="Resource" id="Resource_u8rtx"]
 script = ExtResource("9_0ccfs")
-trigger = ""
+trigger = "ScrapQuest"
 line = "Oh! My cat returned!"
+complete = false
 
-[sub_resource type="Resource" id="Resource_rjuw2"]
+[sub_resource type="Resource" id="Resource_pcgd7"]
 resource_local_to_scene = true
 script = ExtResource("10_f7o67")
 data = Array[ExtResource("9_0ccfs")]([SubResource("Resource_ubiut"), SubResource("Resource_u8rtx")])
@@ -129,54 +131,55 @@ pickup_points = NodePath("PickUpPoints")
 items_list = ExtResource("2_hqc6i")
 
 [node name="BuildingBlank" parent="." instance=ExtResource("3_5lpi6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
 
 [node name="Interactable" parent="." instance=ExtResource("1_04lo1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.470561, 5.95586, 8.053)
+transform = Transform3D(4.92701, 0, 0, 0, 4.92701, 0, 0, 0, 4.92701, 23.8696, 28.37, -54.7636)
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("5_3gk8r")
 interaction = SubResource("Resource_xxn41")
 pop_up_class = "res://Scenes/InteractableButton.tscn"
 
 [node name="Interactable2" parent="." instance=ExtResource("1_04lo1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.85184, 8.70799, -2.2608)
+transform = Transform3D(6.73932, 0, 0, 0, 6.73932, 0, 0, 0, 6.73932, 15.7193, 44.1045, 8.97997)
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("10_hoeky")
 interaction = ExtResource("2_sabkf")
-pop_up_class = "res://Scenes/InteractableButton.tscn"
+pop_up_class = "res://Scenes/InteractableButton_Left.tscn"
 
 [node name="PickUpPoints" type="Node3D" parent="."]
 
 [node name="MeshInstance3D5" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0260477, 13.4394, 9.79198)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 34.6913, 14.5777, 55.9485)
 mesh = SubResource("BoxMesh_a0tyj")
 surface_material_override/0 = ExtResource("12_bpr5n")
-interaction = SubResource("Resource_pr07n")
+interaction = SubResource("Resource_1aqmr")
 pop_up_class = "res://Scenes/InteractableButton.tscn"
 
 [node name="MeshInstance3D8" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.76317, 1.06724, 8.81915)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 10.601, 74.6711, 55.9485)
 mesh = SubResource("BoxMesh_a0tyj")
 surface_material_override/0 = ExtResource("12_bpr5n")
-interaction = SubResource("Resource_l1pg7")
+interaction = SubResource("Resource_ghutt")
 pop_up_class = "res://Scenes/InteractableButton.tscn"
 
 [node name="MeshInstance3D6" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.78736, 7.22078, -8.10471)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 22.3117, 44.0834, -55.1976)
 mesh = SubResource("BoxMesh_a0tyj")
 surface_material_override/0 = ExtResource("12_bpr5n")
-interaction = SubResource("Resource_xjnfd")
+interaction = SubResource("Resource_mi7uf")
 pop_up_class = "res://Scenes/InteractableButton.tscn"
 
 [node name="MeshInstance3D7" parent="PickUpPoints" instance=ExtResource("1_04lo1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.05465, 19.0339, -9.48662)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 2.62321, 104.699, -55.1976)
 mesh = SubResource("BoxMesh_a0tyj")
 surface_material_override/0 = ExtResource("12_bpr5n")
-interaction = SubResource("Resource_lrl4u")
+interaction = SubResource("Resource_yc3iw")
 pop_up_class = "res://Scenes/InteractableButton.tscn"
 
 [node name="Neighbor" parent="." instance=ExtResource("8_laf2c")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.01945, 8.40909, -1)
+transform = Transform3D(-3.74541e-07, 0, 8.56851, 0, 8.56851, 0, -8.56851, 0, -3.74541e-07, 14.3199, 43.612, -0.99824)
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("10_hoeky")
 pop_up_class = "res://Scenes/SpeechBubble.tscn"
-speech_data = SubResource("Resource_rjuw2")
+speech_data = SubResource("Resource_pcgd7")

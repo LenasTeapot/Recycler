@@ -1,15 +1,43 @@
-[gd_scene load_steps=3 format=3 uid="uid://pbg0apmttibs"]
+[gd_scene load_steps=4 format=3 uid="uid://pbg0apmttibs"]
 
 [ext_resource type="Script" path="res://Scripts/SpeechBubble.gd" id="1_gorms"]
 [ext_resource type="Theme" uid="uid://j7q5cjq2akis" path="res://UI/kenneyUI-yellow.tres" id="2_gb1pd"]
+[ext_resource type="Texture2D" uid="uid://d00ws7wljnit4" path="res://UI/UIpack_vector.svg" id="4_3jo7w"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_gorms")
 
 [node name="Label" type="Label" parent="."]
-offset_left = 21.0
-offset_top = -61.0
-offset_right = 268.0
-offset_bottom = -23.0
+offset_left = 32.0
+offset_top = -92.0
+offset_right = 389.0
+offset_bottom = -12.0
 pivot_offset = Vector2(50, 19)
 theme = ExtResource("2_gb1pd")
+text = "This is a Speech Bubble"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Label"]
+show_behind_parent = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = -32
+theme_override_constants/margin_top = -12
+theme_override_constants/margin_right = -32
+theme_override_constants/margin_bottom = -12
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Label/MarginContainer"]
+show_behind_parent = true
+layout_mode = 2
+theme = ExtResource("2_gb1pd")
+texture = ExtResource("4_3jo7w")
+region_rect = Rect2(1051, 0, 190, 49)
+patch_margin_left = 10
+patch_margin_top = 10
+patch_margin_right = 10
+patch_margin_bottom = 10

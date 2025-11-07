@@ -16,14 +16,16 @@ var ramp_up_mod = 0
 func _ready():
 	var curve = path.get_parent()
 	if curve is Path3D:
-		position = curve.curve.get_point_position(0)
+		global_position = curve.global_position
+		y_offset = position.y
+		x_offset = position.x
 
 func _process(delta):
 	if not Input.is_anything_pressed():
 		ramp_up_mod = 0
 	else:
 		ramp_up_mod = clampf(ramp_up_mod + 0.05, 0.0, 1.0)
-	if Input.is_action_pressed("Sprint"):
+	if Input.is_action_just_pressed("Sprint"):
 		up_speed += 0.05
 		side_speed += 0.05
 	if Input.is_action_pressed("Up"):
@@ -39,7 +41,6 @@ func _process(delta):
 		
 	y_offset = clamp(y_offset, Y_MINMAX.x, Y_MINMAX.y)
 	position.y = y_offset
-	
 	z_offset = clamp(z_offset, Z_MINMAX.x, Z_MINMAX.y)
 	position.z = z_offset
 	

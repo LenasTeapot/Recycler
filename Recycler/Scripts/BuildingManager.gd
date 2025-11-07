@@ -28,9 +28,11 @@ func _on_trash_collected(point):
 	point.set_active(false)
 	if active_points.has(point):
 		active_points.erase(point)
-		var new_trash = items_list.get_trash(randi_range(1, 3))
+		### TODO Move this to inventory
+		var new_trash = items_list.get_trash(randi_range(1, 4))
 		print(new_trash)
 		Events.emit_signal("take_inventory", new_trash)
+		###
 		set_up_timer(null, POST_PICKUP_WAIT_TIME, true, 
 					func(): inactive_points.append(point))
 		

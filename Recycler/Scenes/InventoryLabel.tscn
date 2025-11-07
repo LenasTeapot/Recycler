@@ -1,10 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://dhdy3c8h00mgn"]
+[gd_scene load_steps=3 format=3 uid="uid://dhdy3c8h00mgn"]
 
 [ext_resource type="Script" path="res://InventoryLabel.gd" id="1_lpi53"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tgr4e"]
+font_size = 24
+font_color = Color(0, 0, 0, 1)
 
 [node name="Label" type="Label"]
 offset_right = 80.0
 offset_bottom = 23.0
+text = "INVENTORY"
+label_settings = SubResource("LabelSettings_tgr4e")
 horizontal_alignment = 1
 vertical_alignment = 1
 script = ExtResource("1_lpi53")

@@ -8,12 +8,10 @@ func _ready():
 	Events.connect("ui_close", _on_ui_close)
 	Events.connect("select_ui", _on_select)
 	
-	
 func _on_ui_open(node):
-	if node:
-		print("open ui")
-	else:
-		print("No node")
+	if not node:
+		printerr("No node given for this UI popup")
+		return
 	var instance = load(node.pop_up_class).instantiate()
 	add_child(instance)
 	current_interactables[node] = instance

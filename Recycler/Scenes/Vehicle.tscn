@@ -5,24 +5,24 @@
 [sub_resource type="BoxMesh" id="BoxMesh_lb1hq"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_il3ne"]
-size = Vector3(0.668701, 0.48587, 10.4453)
+size = Vector3(0.5, 0.5, 10)
 
 [node name="Vehicle" type="Node3D"]
 script = ExtResource("1_qtq6r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.3694, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.76837e-07)
+transform = Transform3D(8.76778, 0, 0, 0, 6.40264, 0, 0, 0, 6.40264, 0, 0, 4.76837e-07)
 mesh = SubResource("BoxMesh_lb1hq")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(1.71175, 0, 0, 0, 0.75, -1.86265e-09, 0, 1.86265e-09, 0.75, 0, 0, 4.76837e-07)
+transform = Transform3D(10.9597, 0, 0, 0, 4.80198, -1.19259e-08, 0, 1.19259e-08, 4.80198, 0, 0, 4.76837e-07)
 mesh = SubResource("BoxMesh_lb1hq")
 
 [node name="Vehicle_Area3D" type="Area3D" parent="."]
-transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0)
+transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Vehicle_Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00158691, 0.0105743, -0.0240593)
+transform = Transform3D(0.999999, 0, 0, 0, 0.999999, 0, 0, 0, 0.999999, 0, 0, 0)
 shape = SubResource("BoxShape3D_il3ne")
 
 [connection signal="area_entered" from="Vehicle_Area3D" to="." method="_on_area_3d_area_entered"]

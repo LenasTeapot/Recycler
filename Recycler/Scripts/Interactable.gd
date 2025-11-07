@@ -7,11 +7,11 @@ extends MeshInstance3D
 var is_active : bool
 
 func _on_area_3d_area_entered(area_in):
-	print(area_in)
 	if area_in.name == area.name:
 		return
 	if not interaction:
-		Events.emit_signal("ui_open", self)
+		if pop_up_class != null:
+			Events.emit_signal("ui_open", self)
 		return
 	if interaction.requires_item != "":
 		if Events.inventory.contains(interaction.requires_item):
