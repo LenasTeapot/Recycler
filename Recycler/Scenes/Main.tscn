@@ -67,10 +67,12 @@ script = ExtResource("1_32ug3")
 environment = SubResource("Environment_c8ay7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(-0.155731, -0.927482, -0.33989, 0.195231, -0.3662, 0.909826, -0.968314, 0.0753309, 0.238101, 0, 38.5699, 12.6341)
+transform = Transform3D(0.310126, -0.731438, -0.607306, 0.148272, -0.593772, 0.790854, -0.939062, -0.335311, -0.0756918, 0, 38.5699, 12.6341)
+light_color = Color(1, 0.964706, 0.945098, 1)
 shadow_enabled = true
 shadow_opacity = 0.85
-directional_shadow_max_distance = 500.0
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 250.0
 
 [node name="Canvas_PopUps" type="CanvasLayer" parent="."]
 script = ExtResource("3_0fs0c")
@@ -137,8 +139,48 @@ transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, 
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("4_vco24")
 
+[node name="Neighbor3" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, 6, 41, 49)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor4" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, 6.00003, 41, -344)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor9" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, 18, 9, -319)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor5" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, 6.00004, 73, -393)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor6" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -16, 103, -336)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor7" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -16, 103, -213)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor8" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -16, 72, -138)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
 [node name="Neighbor2" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
 transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -15, 106, -12)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor10" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -15, 70, -29)
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("4_vco24")
 
