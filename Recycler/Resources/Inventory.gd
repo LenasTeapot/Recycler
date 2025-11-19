@@ -6,33 +6,36 @@ class_name Inventory
 func _init():
 	pass
 
-func add_item(item):
+func add_item(item : Item_Resource):
 	for entry in inventory:
-		if entry.item_name == item:
+		if entry.item_name == item.item_name:
 			entry.count += 1
 			return
-	var new_res = Item_Resource.new()
-	new_res.item_name = item
-	new_res.count = 1
-	inventory.append(new_res)
+	inventory.append(item)
 	
-func remove_item(item):
+func remove_item(item : Item_Resource):
 	for entry in inventory:
-		if entry.item_name == item:
+		if entry.item_name == item.item_name:
 			entry.count -= 1
 			if entry.count == 0:
 				inventory.erase(entry)
 			return
 
-func contains(item):
+func contains(item : Item_Resource):
 	for entry in inventory:
-		if entry.item_name == item:
+		if entry.item_name == item.item_name:
 			return true
 	return false
 	
-func get_count(item):
+func contains_by_name(item_name : String):
 	for entry in inventory:
-		if entry.item_name == item:
+		if entry.item_name == item_name:
+			return true
+	return false
+	
+func get_count(item : Item_Resource):
+	for entry in inventory:
+		if entry.item_name == item.item_name:
 			return entry.count
 	return 0
 

@@ -1,7 +1,7 @@
 # Blender MTL File: 'Recycler_Buildings.blend'
-# Material Count: 1
+# Material Count: 2
 
-newmtl Material.003
+newmtl Material.001
 Ns 250.000000
 Ka 1.000000 1.000000 1.000000
 Kd 0.800000 0.800000 0.800000
@@ -10,4 +10,13 @@ Ke 0.000000 0.000000 0.000000
 Ni 1.450000
 d 1.000000
 illum 2
-map_Kd BW.png
+
+newmtl Material.Window
+Ns 250.000000
+Ka 1.000000 1.000000 1.000000
+Kd 0.456834 0.694475 0.967088
+Ks 0.500000 0.500000 0.500000
+Ke 0.000000 0.000000 0.000000
+Ni 1.450000
+d 0.735055
+illum 9

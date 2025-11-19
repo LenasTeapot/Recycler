@@ -10,7 +10,7 @@ func get_trash(num: int):
 		var item : Item_Resource = items_list.pick_random()
 		if item.unique and item.in_inventory:
 			continue
-		trash.append(item.item_name)
+		trash.append(item)
 		item.in_inventory = true
 	return trash
 	

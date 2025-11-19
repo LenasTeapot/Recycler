@@ -4,6 +4,7 @@ class_name Item_Resource
 #public
 @export var item_name : String = "item name"
 @export var unique : bool = false
+#TODO : Add a weight?
 
 #private
 var count : int = 1 #Used in Inventory

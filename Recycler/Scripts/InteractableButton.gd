@@ -20,7 +20,7 @@ func _ready():
 func _on_pressed():
 	if is_tweening:
 		return
-	interaction.action.call(my_node)
+	interaction.button_action.call(my_node)
 	bounce()
 	play_sound()
 	#On close will get called when leaving area
@@ -46,7 +46,12 @@ func bounce():
 	var start_pos = element.position
 	element.position = Vector2(start_pos.x, start_pos.y - 10)
 	bounce_tween.tween_property(element, "position", start_pos, 0.5).set_trans(Tween.TRANS_BACK)
-	bounce_tween.tween_callback(func(): is_tweening = false)
+	bounce_tween.tween_callback(tween_done)
+	
+func tween_done():
+	if is_queued_for_deletion():
+		return
+	is_tweening = false
 
 func wiggle(repeats: int):
 	element.scale = Vector2(1.05, 1.05)

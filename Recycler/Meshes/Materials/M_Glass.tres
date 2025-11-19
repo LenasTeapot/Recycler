@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://5e8mx7fv2nyo"]
+
+[resource]
+transparency = 1
+blend_mode = 1
+diffuse_mode = 1
+albedo_color = Color(0.654902, 0.886275, 0.945098, 0.176471)
+roughness = 0.15
+texture_filter = 0
+grow_amount = 3.74

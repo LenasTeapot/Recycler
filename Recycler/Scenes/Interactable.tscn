@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_falej"]
 
-[node name="MeshInstance3D5" type="MeshInstance3D"]
+[node name="Interactable" type="MeshInstance3D"]
 mesh = SubResource("SphereMesh_ll0p1")
 script = ExtResource("1_hv562")
 

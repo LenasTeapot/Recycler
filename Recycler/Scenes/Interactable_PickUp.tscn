@@ -1,0 +1,41 @@
+[gd_scene load_steps=12 format=3 uid="uid://cp5sbultbkxb7"]
+
+[ext_resource type="PackedScene" uid="uid://bmgmpouwk621s" path="res://Scenes/Interactable.tscn" id="1_epe6n"]
+[ext_resource type="Material" uid="uid://c5jrdcs0x51u3" path="res://Meshes/Materials/M_Red.tres" id="2_dkes7"]
+[ext_resource type="PackedScene" uid="uid://banhvi7f5xcm" path="res://Scenes/PickUpNotify.tscn" id="3_j5yqg"]
+[ext_resource type="Script" path="res://Resources/Interaction_TrashPickUp.gd" id="3_rbpwa"]
+[ext_resource type="Script" path="res://Resources/Action_TrashCollect.gd" id="3_vl2n3"]
+[ext_resource type="Script" path="res://Resources/Action_SetVisible.gd" id="4_d0lsu"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_rwqag"]
+
+[sub_resource type="Resource" id="Resource_pijsy"]
+script = ExtResource("3_vl2n3")
+
+[sub_resource type="Resource" id="Resource_34ijc"]
+script = ExtResource("4_d0lsu")
+override_visible = true
+set_children_to_match = true
+
+[sub_resource type="Resource" id="Resource_v44o3"]
+script = ExtResource("4_d0lsu")
+override_visible = false
+set_children_to_match = true
+
+[sub_resource type="Resource" id="Resource_h3vq1"]
+resource_local_to_scene = true
+script = ExtResource("3_rbpwa")
+identity = "Trash Pick Up"
+button_label = "Take Trash"
+action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+pop_up_side = 1
+triggerable_actions = Array[Resource("res://Resources/TriggerableAction.gd")]([])
+active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+
+[node name="PickUp" instance=ExtResource("1_epe6n")]
+material_override = ExtResource("2_dkes7")
+mesh = SubResource("BoxMesh_rwqag")
+interaction = SubResource("Resource_h3vq1")
+
+[node name="Notify" parent="." index="1" instance=ExtResource("3_j5yqg")]

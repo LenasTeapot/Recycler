@@ -16,7 +16,7 @@ func _process(delta):
 
 func load_data(node_in):
 	my_node = node_in
-	if node_in is MeshInstance3D:
+	if node_in is MeshInstance3D and node_in.mesh != null:
 		var bounds = node_in.mesh.get_aabb();
 		offset_y = bounds.size.y * my_node.scale.y
 	

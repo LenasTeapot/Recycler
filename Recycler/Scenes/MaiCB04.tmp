@@ -1,0 +1,360 @@
+[gd_scene load_steps=40 format=3 uid="uid://cbdtpmwajox4l"]
+
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_32ug3"]
+[ext_resource type="PackedScene" uid="uid://du0fsi2mhwtl6" path="res://Scenes/BuildingB.tscn" id="1_x1kyp"]
+[ext_resource type="PackedScene" uid="uid://cgwyhdkm3jtdd" path="res://Scenes/Vehicle.tscn" id="2_32wy5"]
+[ext_resource type="PackedScene" uid="uid://bm4m78xu4hut5" path="res://Scenes/Building_Blank.tscn" id="2_ms54r"]
+[ext_resource type="Script" path="res://Scripts/UI_Manager.gd" id="3_0fs0c"]
+[ext_resource type="PackedScene" uid="uid://jkad4oailp2o" path="res://Scenes/Neighbor.tscn" id="3_1xceb"]
+[ext_resource type="PackedScene" uid="uid://bc3tttw1q2h7d" path="res://Scenes/canvas_inventory.tscn" id="4_36l3p"]
+[ext_resource type="Material" uid="uid://dopok0aev4pdr" path="res://Meshes/Materials/M_Orange.tres" id="4_vco24"]
+[ext_resource type="AudioStream" uid="uid://cp7w6o4bqccr7" path="res://Music/013_Another_August.mp3" id="7_tjtpk"]
+[ext_resource type="PackedScene" uid="uid://it37vtv0lqlx" path="res://Scenes/BuildingDivider.tscn" id="8_wpchk"]
+[ext_resource type="PackedScene" uid="uid://cetfr4bdme11c" path="res://Scenes/Rooftop.tscn" id="11_05aaq"]
+[ext_resource type="Script" path="res://Resources/Step.gd" id="12_b3cp6"]
+[ext_resource type="PackedScene" uid="uid://baiyjs8fbgswq" path="res://Scenes/Panel_Dome.tscn" id="12_yabfs"]
+[ext_resource type="Script" path="res://Resources/Interaction_Action.gd" id="13_3mrow"]
+[ext_resource type="PackedScene" uid="uid://cp5sbultbkxb7" path="res://Scenes/Interactable_PickUp.tscn" id="14_hmao5"]
+[ext_resource type="AudioStream" uid="uid://8aea08odyg77" path="res://Music/cat_purractive_loop.wav" id="14_ox2bt"]
+[ext_resource type="Script" path="res://Resources/Interaction_Speech.gd" id="15_64chp"]
+[ext_resource type="PackedScene" uid="uid://bmgmpouwk621s" path="res://Scenes/Interactable.tscn" id="15_eqhpk"]
+[ext_resource type="Script" path="res://Resources/TriggerableAction.gd" id="16_a77ou"]
+[ext_resource type="Script" path="res://Resources/Action_SetVisibility.gd" id="16_mcdjh"]
+
+[sub_resource type="Sky" id="Sky_5sfjv"]
+
+[sub_resource type="Environment" id="Environment_c8ay7"]
+background_mode = 1
+background_color = Color(0.541176, 0.690196, 1, 1)
+sky = SubResource("Sky_5sfjv")
+ambient_light_color = Color(0.34902, 0.466667, 0.698039, 1)
+ambient_light_energy = 1.5
+reflected_light_source = 2
+ssao_enabled = true
+ssil_radius = 1.16
+ssil_sharpness = 1.0
+fog_enabled = true
+fog_light_color = Color(0.619608, 0.792157, 0.94902, 1)
+fog_density = 0.001
+adjustment_contrast = 0.82
+adjustment_saturation = 1.27
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_b6cod"]
+dof_blur_far_distance = 20.0
+
+[sub_resource type="Curve3D" id="Curve3D_dfgtn"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 55, 130, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_ea2u5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pwaa6"]
+albedo_color = Color(0, 0.607843, 0.839216, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_aw677"]
+
+[sub_resource type="Resource" id="Resource_w08a3"]
+script = ExtResource("12_b3cp6")
+trigger = ""
+line = "Mr. Thumbs, where are you?"
+complete = false
+
+[sub_resource type="Resource" id="Resource_cl84f"]
+script = ExtResource("12_b3cp6")
+trigger = "CatPlankQuest"
+line = "Oh, there you are!"
+complete = false
+
+[sub_resource type="Resource" id="Resource_s6mrn"]
+script = ExtResource("15_64chp")
+identity = "Name of Person"
+speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_w08a3"), SubResource("Resource_cl84f")])
+pop_up_side = 0
+triggerable_actions = Array[ExtResource("16_a77ou")]([])
+hide_when_inactive = false
+
+[sub_resource type="Resource" id="Resource_htnr5"]
+script = ExtResource("13_3mrow")
+identity = "The Cat"
+button_label = "Pet the Cat"
+sound = ExtResource("14_ox2bt")
+repeatable = true
+max_repeats = -1
+hide_on_complete = false
+activate_trigger = "CatPlankQuest"
+completed_trigger = ""
+requires_item = ""
+button_actions = Array[Resource("res://Resources/Action.gd")]([])
+pop_up_side = 2
+triggerable_actions = Array[ExtResource("16_a77ou")]([])
+hide_when_inactive = true
+
+[sub_resource type="Resource" id="Resource_n45ph"]
+script = ExtResource("12_b3cp6")
+trigger = ""
+line = "Ugh."
+complete = false
+
+[sub_resource type="Resource" id="Resource_feb76"]
+script = ExtResource("12_b3cp6")
+trigger = "CatPlankQuest"
+line = "Aw, that cat left."
+complete = false
+
+[sub_resource type="Resource" id="Resource_3vdiv"]
+script = ExtResource("15_64chp")
+identity = "Name of Person"
+speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_n45ph"), SubResource("Resource_feb76")])
+pop_up_side = 0
+triggerable_actions = Array[ExtResource("16_a77ou")]([])
+hide_when_inactive = false
+
+[sub_resource type="Resource" id="Resource_kye2c"]
+script = ExtResource("12_b3cp6")
+trigger = ""
+line = "Meow! Meow!"
+complete = false
+
+[sub_resource type="Resource" id="Resource_jvjoq"]
+script = ExtResource("16_mcdjh")
+override_visible = false
+
+[sub_resource type="Resource" id="Resource_yf3vy"]
+script = ExtResource("16_a77ou")
+trigger = "CatPlankQuest"
+actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_jvjoq")])
+
+[sub_resource type="Resource" id="Resource_xx5t3"]
+script = ExtResource("15_64chp")
+identity = "The Lost Cat"
+speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_kye2c")])
+pop_up_side = 0
+triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_yf3vy")])
+hide_when_inactive = true
+
+[sub_resource type="Resource" id="Resource_obfno"]
+script = ExtResource("13_3mrow")
+identity = "Wooden Plank"
+button_label = "Use Wooden Plank"
+repeatable = false
+max_repeats = 0
+hide_on_complete = false
+activate_trigger = ""
+completed_trigger = ""
+requires_item = "Wooden Plank"
+button_actions = Array[Resource("res://Resources/Action.gd")]([])
+pop_up_side = 1
+triggerable_actions = Array[ExtResource("16_a77ou")]([])
+hide_when_inactive = true
+
+[node name="Main" type="Node3D"]
+script = ExtResource("1_32ug3")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_c8ay7")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.310126, -0.731438, -0.607306, 0.148272, -0.593772, 0.790854, -0.939062, -0.335311, -0.0756918, 0, 38.5699, 12.6341)
+light_color = Color(1, 0.964706, 0.945098, 1)
+shadow_enabled = true
+shadow_opacity = 0.85
+directional_shadow_split_2 = 0.25
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 400.0
+
+[node name="Canvas_Settings" type="CanvasLayer" parent="."]
+
+[node name="Canvas_PopUps" type="CanvasLayer" parent="."]
+layer = 3
+script = ExtResource("3_0fs0c")
+
+[node name="Canvas_Inventory" parent="." instance=ExtResource("4_36l3p")]
+
+[node name="Vehicle" parent="." node_paths=PackedStringArray("path") groups=["Player"] instance=ExtResource("2_32wy5")]
+transform = Transform3D(1.31134e-07, 0, -0.999996, 0, 1, 0, 0.999996, 0, 1.31134e-07, -76.7046, 22.0562, -1.65235)
+path = NodePath("../Path3D2/PathFollow3D")
+Y_MINMAX = Vector2(0, 150)
+Z_MINMAX = Vector2(-265, 265)
+up_speed = 1.5
+side_speed = 1.5
+
+[node name="Camera3D" type="Camera3D" parent="Vehicle"]
+transform = Transform3D(1, 5.77316e-15, -1.13687e-13, 0, 0.99863, 0.0523358, 1.13687e-13, -0.052336, 0.998634, 4.76837e-07, 19, 75.9999)
+attributes = SubResource("CameraAttributesPractical_b6cod")
+current = true
+fov = 40.0
+
+[node name="Path3D2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.2088, 9.32824, 0)
+curve = SubResource("Curve3D_dfgtn")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
+transform = Transform3D(-4.37114e-08, -0.920967, -0.38964, 0, 0.38964, -0.920967, 1, -4.02567e-08, -1.70317e-08, 0.515013, 1.2173, 0)
+progress = 1.32316
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_tjtpk")
+volume_db = -1.0
+pitch_scale = 0.46
+autoplay = true
+
+[node name="waterplane" type="MeshInstance3D" parent="."]
+transform = Transform3D(160, 0, 0, 0, 100, 0, 0, 0, 500, 0, -20, 0)
+mesh = SubResource("PlaneMesh_ea2u5")
+surface_material_override/0 = SubResource("StandardMaterial3D_pwaa6")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="."]
+transform = Transform3D(80, 0, 0, 0, 20, 0, 0, 0, 120, -25, -21, 0)
+mesh = SubResource("BoxMesh_aw677")
+skeleton = NodePath("../waterplane")
+
+[node name="Building" type="Node3D" parent="."]
+
+[node name="Stairwell" parent="Building" instance=ExtResource("8_wpchk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2, 5, 86)
+
+[node name="Stairwell2" parent="Building" instance=ExtResource("8_wpchk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, -86)
+
+[node name="Stairwell3" parent="Building" instance=ExtResource("8_wpchk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, -258)
+
+[node name="Stairwell4" parent="Building" instance=ExtResource("8_wpchk")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, 258)
+
+[node name="BuildingB" parent="Building" instance=ExtResource("1_x1kyp")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+
+[node name="Neighbor7" parent="Building/BuildingB" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 0, 0, 7.6, 0, 0, 0, -7.6, -35, 102, -52)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor8" parent="Building/BuildingB" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 0, 0, 7.6, 0, 0, 0, -7.6, -44, 71, 6.00001)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor11" parent="Building/BuildingB" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 0, 0, 7.6, 0, 0, 0, -7.6, 11, 41, -44)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+interaction = SubResource("Resource_s6mrn")
+
+[node name="Neighbor" parent="Building/BuildingB" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 0, 0, 7.6, 0, 0, 0, -7.6, -63, 141, 52)
+material_override = ExtResource("4_vco24")
+skeleton = NodePath("../..")
+
+[node name="Neighbor12" parent="Building/BuildingB" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 0, 0, 7.6, 0, 0, 0, -7.6, 3.99999, 9, 53)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Cat_2" parent="Building/BuildingB" instance=ExtResource("15_eqhpk")]
+transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, 10, 43, -35)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+interaction = SubResource("Resource_htnr5")
+
+[node name="BuildingA" parent="Building" instance=ExtResource("2_ms54r")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, -172)
+
+[node name="Neighbor" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, 6, 41, 4)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor3" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, 6, 41, 49)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor2" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -28, 106, -12)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor10" parent="Building/BuildingA" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -53, 71, -41)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="BuildingC" parent="Building" instance=ExtResource("2_ms54r")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 4, 5, 172)
+
+[node name="Neighbor6" parent="Building/BuildingC" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -36, 103, 8)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor5" parent="Building/BuildingC" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -47, 71, -8)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Neighbor9" parent="Building/BuildingC" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, 22, 9, 25)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+interaction = SubResource("Resource_3vdiv")
+
+[node name="Neighbor4" parent="Building/BuildingC" instance=ExtResource("3_1xceb")]
+transform = Transform3D(-7.6, 0, 6.64413e-07, 0, 7.6, 0, -6.64413e-07, 0, -7.6, -14, 41, -29)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+
+[node name="Cat_1" parent="Building/BuildingC" instance=ExtResource("15_eqhpk")]
+transform = Transform3D(-6, 0, 5.24536e-07, 0, 6, 0, -5.24536e-07, 0, -6, 46, 15, -81.9998)
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("4_vco24")
+interaction = SubResource("Resource_xx5t3")
+
+[node name="Rooftop" parent="Building" instance=ExtResource("11_05aaq")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
+
+[node name="PickUp" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -14.6883, 52.0834, -227.198)
+skeleton = NodePath("")
+
+[node name="PickUp2" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 23.3117, 113.083, -227.198)
+skeleton = NodePath("")
+
+[node name="PickUp3" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -30.6883, 20.0834, -116.198)
+skeleton = NodePath("")
+
+[node name="PickUp4" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 7.3117, 81.0834, -116.198)
+skeleton = NodePath("")
+
+[node name="PickUp5" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -27.6883, 18.0834, 222.802)
+skeleton = NodePath("")
+
+[node name="PickUp6" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 10.3117, 79.0834, 222.802)
+skeleton = NodePath("")
+
+[node name="PickUp7" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -11.6883, 49.0834, 118.802)
+skeleton = NodePath("")
+
+[node name="PickUp8" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 26.3117, 110.083, 118.802)
+skeleton = NodePath("")
+
+[node name="CatPlank" parent="Building" instance=ExtResource("15_eqhpk")]
+transform = Transform3D(9, 0, 0, 0, -4.76837e-07, 1.8, 0, -15.3, -2.38419e-07, -39, 18, 238)
+mesh = null
+interaction = SubResource("Resource_obfno")
+
+[node name="Node3D" parent="." instance=ExtResource("12_yabfs")]
+transform = Transform3D(-3.09086e-08, -0.707107, -0.707107, 1, 1.91069e-15, -4.37114e-08, 3.09086e-08, -0.707107, 0.707107, 16, 44, -325)
+
+[node name="Node3D2" parent="." instance=ExtResource("12_yabfs")]
+transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, 1, -4.37114e-08, 0, 3.09086e-08, 0.707107, 0.707107, 16, 44, 325)

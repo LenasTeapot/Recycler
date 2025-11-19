@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="ItemListResource" load_steps=8 format=3 uid="uid://ctaq34pky6k3k"]
+[gd_resource type="Resource" script_class="ItemListResource" load_steps=10 format=3 uid="uid://ctaq34pky6k3k"]
 
 [ext_resource type="Script" path="res://Resources/ItemListResource.gd" id="1_r7yte"]
 [ext_resource type="Script" path="res://Resources/Item.gd" id="1_s2l1g"]
@@ -28,6 +28,16 @@ script = ExtResource("1_s2l1g")
 item_name = "Metal Piece"
 unique = false
 
+[sub_resource type="Resource" id="Resource_xxynx"]
+script = ExtResource("1_s2l1g")
+item_name = "Cardboard"
+unique = false
+
+[sub_resource type="Resource" id="Resource_tl4bg"]
+script = ExtResource("1_s2l1g")
+item_name = "Wooden Plank"
+unique = true
+
 [resource]
 script = ExtResource("1_r7yte")
-items_list = Array[ExtResource("1_s2l1g")]([SubResource("Resource_fljgl"), SubResource("Resource_2nadx"), SubResource("Resource_jifis"), SubResource("Resource_7lvm3"), SubResource("Resource_rqeaq")])
+items_list = Array[ExtResource("1_s2l1g")]([SubResource("Resource_fljgl"), SubResource("Resource_2nadx"), SubResource("Resource_jifis"), SubResource("Resource_7lvm3"), SubResource("Resource_rqeaq"), SubResource("Resource_xxynx"), SubResource("Resource_tl4bg")])

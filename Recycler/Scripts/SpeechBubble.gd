@@ -9,6 +9,7 @@ func _ready():
 
 func load_data(node_in):
 	super(node_in)
-	if my_node.speech_data:
-		element.text = my_node.speech_data.get_current_line()
+	var data = my_node.interaction
+	if data != null:
+		element.text = data.get_current_line()
 	element.name = "speech_bubble"

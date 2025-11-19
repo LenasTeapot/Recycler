@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://cbdtpmwajox4l"]
+[gd_scene load_steps=51 format=3 uid="uid://cbdtpmwajox4l"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_32ug3"]
 [ext_resource type="PackedScene" uid="uid://du0fsi2mhwtl6" path="res://Scenes/BuildingB.tscn" id="1_x1kyp"]
@@ -14,23 +14,14 @@
 [ext_resource type="Script" path="res://Resources/Step.gd" id="12_b3cp6"]
 [ext_resource type="PackedScene" uid="uid://baiyjs8fbgswq" path="res://Scenes/Panel_Dome.tscn" id="12_yabfs"]
 [ext_resource type="Script" path="res://Resources/Interaction_Action.gd" id="13_3mrow"]
-[ext_resource type="Script" path="res://Resources/Action_GrantInventoryItem.gd" id="13_jamxo"]
-[ext_resource type="Script" path="res://Resources/Action_SetVisible.gd" id="13_tks5g"]
 [ext_resource type="PackedScene" uid="uid://cp5sbultbkxb7" path="res://Scenes/Interactable_PickUp.tscn" id="14_hmao5"]
-[ext_resource type="Script" path="res://Resources/Item.gd" id="14_i2k0t"]
 [ext_resource type="AudioStream" uid="uid://8aea08odyg77" path="res://Music/cat_purractive_loop.wav" id="14_ox2bt"]
 [ext_resource type="Script" path="res://Resources/Interaction_Speech.gd" id="15_64chp"]
 [ext_resource type="PackedScene" uid="uid://bmgmpouwk621s" path="res://Scenes/Interactable.tscn" id="15_eqhpk"]
 [ext_resource type="Script" path="res://Resources/TriggerableAction.gd" id="16_a77ou"]
-[ext_resource type="Script" path="res://Resources/Action_SetActive.gd" id="16_mcdjh"]
-[ext_resource type="Script" path="res://Resources/Action_TriggerQuestComplete.gd" id="20_adfmm"]
-[ext_resource type="Script" path="res://Resources/Action_TrashCollect.gd" id="20_gbf3u"]
-[ext_resource type="Script" path="res://Resources/Interaction_TrashPickUp.gd" id="21_686el"]
-[ext_resource type="Script" path="res://Resources/Action_MeshSwap.gd" id="23_wrj0k"]
-[ext_resource type="PackedScene" uid="uid://5jn1a5mcfq6d" path="res://Scenes/Interactable_FlowerBed.tscn" id="28_6rup8"]
-[ext_resource type="Script" path="res://Resources/Action_CountQuest.gd" id="28_77ij2"]
-[ext_resource type="Script" path="res://Resources/Action_ResetNonRepeatable.gd" id="29_16qfy"]
-[ext_resource type="Script" path="res://Resources/Action_TimerDelayedActions.gd" id="30_76lb0"]
+[ext_resource type="Script" path="res://Resources/Action_SetVisibility.gd" id="16_mcdjh"]
+[ext_resource type="Script" path="res://Resources/Interaction_TrashPickUp.gd" id="18_ud0km"]
+[ext_resource type="Script" path="res://Resources/Action_TrashCollect.gd" id="20_0xrbv"]
 
 [sub_resource type="Sky" id="Sky_5sfjv"]
 
@@ -85,51 +76,23 @@ identity = "Name of Person"
 speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_w08a3"), SubResource("Resource_cl84f")])
 pop_up_side = 0
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
-
-[sub_resource type="Resource" id="Resource_4tdr4"]
-script = ExtResource("13_tks5g")
-override_visible = true
-set_children_to_match = true
-
-[sub_resource type="Resource" id="Resource_lkjax"]
-script = ExtResource("14_i2k0t")
-item_name = "Cat Fur"
-unique = false
-
-[sub_resource type="Resource" id="Resource_p2lvd"]
-script = ExtResource("13_jamxo")
-unique_items = Array[ExtResource("14_i2k0t")]([SubResource("Resource_lkjax")])
-
-[sub_resource type="Resource" id="Resource_3eyvq"]
-script = ExtResource("13_tks5g")
-override_visible = false
-set_children_to_match = true
-
-[sub_resource type="Resource" id="Resource_j8hyd"]
-script = ExtResource("16_mcdjh")
-override_active = true
-
-[sub_resource type="Resource" id="Resource_6alsi"]
-script = ExtResource("16_a77ou")
-trigger = "CatPlankQuest"
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_j8hyd")])
+hide_when_inactive = false
 
 [sub_resource type="Resource" id="Resource_htnr5"]
 script = ExtResource("13_3mrow")
-identity = "The Found Cat"
+identity = "The Cat"
 button_label = "Pet the Cat"
 sound = ExtResource("14_ox2bt")
 repeatable = true
 max_repeats = -1
-requires_item = ""
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_p2lvd")])
-start_active = false
+hide_on_complete = null
+activate_trigger = "CatPlankQuest"
+completed_trigger = null
+requires_item = null
+button_actions = null
 pop_up_side = 2
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_6alsi")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_4tdr4")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_3eyvq")])
+triggerable_actions = null
+hide_when_inactive = true
 
 [sub_resource type="Resource" id="Resource_n45ph"]
 script = ExtResource("12_b3cp6")
@@ -149,18 +112,7 @@ identity = "Name of Person"
 speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_n45ph"), SubResource("Resource_feb76")])
 pop_up_side = 0
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
-
-[sub_resource type="Resource" id="Resource_prwa3"]
-script = ExtResource("13_tks5g")
-override_visible = true
-set_children_to_match = true
-
-[sub_resource type="Resource" id="Resource_s07ib"]
-script = ExtResource("13_tks5g")
-override_visible = false
-set_children_to_match = true
+hide_when_inactive = false
 
 [sub_resource type="Resource" id="Resource_kye2c"]
 script = ExtResource("12_b3cp6")
@@ -168,285 +120,128 @@ trigger = ""
 line = "Meow! Meow!"
 complete = false
 
-[sub_resource type="Resource" id="Resource_t4qie"]
+[sub_resource type="Resource" id="Resource_jvjoq"]
 script = ExtResource("16_mcdjh")
-override_active = false
+override_visible = false
 
-[sub_resource type="Resource" id="Resource_68s5y"]
+[sub_resource type="Resource" id="Resource_yf3vy"]
 script = ExtResource("16_a77ou")
 trigger = "CatPlankQuest"
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_t4qie")])
+actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_jvjoq")])
 
 [sub_resource type="Resource" id="Resource_xx5t3"]
 script = ExtResource("15_64chp")
 identity = "The Lost Cat"
 speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_kye2c")])
 pop_up_side = 0
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_68s5y")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_prwa3")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_s07ib")])
+triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_yf3vy")])
+hide_when_inactive = true
 
 [sub_resource type="Resource" id="Resource_pijsy"]
-script = ExtResource("20_gbf3u")
+script = ExtResource("20_0xrbv")
 
-[sub_resource type="Resource" id="Resource_34ijc"]
-script = ExtResource("13_tks5g")
-override_visible = true
-set_children_to_match = true
-
-[sub_resource type="Resource" id="Resource_v44o3"]
-script = ExtResource("13_tks5g")
-override_visible = false
-set_children_to_match = true
-
-[sub_resource type="Resource" id="Resource_8t78g"]
+[sub_resource type="Resource" id="Resource_bn7sl"]
 resource_local_to_scene = true
-script = ExtResource("21_686el")
+script = ExtResource("18_ud0km")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
+completed_trigger = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+hide_when_inactive = true
 
-[sub_resource type="Resource" id="Resource_e4j84"]
+[sub_resource type="Resource" id="Resource_wll51"]
 resource_local_to_scene = true
-script = ExtResource("21_686el")
+script = ExtResource("18_ud0km")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
+completed_trigger = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+hide_when_inactive = true
 
-[sub_resource type="Resource" id="Resource_sf5uj"]
+[sub_resource type="Resource" id="Resource_3g8ft"]
 resource_local_to_scene = true
-script = ExtResource("21_686el")
+script = ExtResource("18_ud0km")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
+completed_trigger = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+hide_when_inactive = true
 
-[sub_resource type="Resource" id="Resource_vi28l"]
+[sub_resource type="Resource" id="Resource_10sum"]
 resource_local_to_scene = true
-script = ExtResource("21_686el")
+script = ExtResource("18_ud0km")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
+completed_trigger = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+hide_when_inactive = true
 
-[sub_resource type="Resource" id="Resource_t043i"]
+[sub_resource type="Resource" id="Resource_bgke0"]
 resource_local_to_scene = true
-script = ExtResource("21_686el")
+script = ExtResource("18_ud0km")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
+completed_trigger = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+hide_when_inactive = true
 
-[sub_resource type="Resource" id="Resource_b2pv3"]
+[sub_resource type="Resource" id="Resource_lm8dt"]
 resource_local_to_scene = true
-script = ExtResource("21_686el")
+script = ExtResource("18_ud0km")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
+completed_trigger = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+hide_when_inactive = true
 
-[sub_resource type="Resource" id="Resource_ekvqh"]
+[sub_resource type="Resource" id="Resource_qutyl"]
 resource_local_to_scene = true
-script = ExtResource("21_686el")
+script = ExtResource("18_ud0km")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
+completed_trigger = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+hide_when_inactive = true
 
-[sub_resource type="Resource" id="Resource_03lcg"]
+[sub_resource type="Resource" id="Resource_nhkob"]
 resource_local_to_scene = true
-script = ExtResource("21_686el")
+script = ExtResource("18_ud0km")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
+completed_trigger = ""
 action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
 triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_lxfxr"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_k44n5"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_ufh2q"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_2r2kg"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_na5ej"]
-script = ExtResource("20_adfmm")
-trigger_on_complete = "CatPlankQuest"
-
-[sub_resource type="BoxMesh" id="BoxMesh_7yob7"]
-
-[sub_resource type="Resource" id="Resource_io7y8"]
-script = ExtResource("23_wrj0k")
-secondary_mesh = SubResource("BoxMesh_7yob7")
+hide_when_inactive = true
 
 [sub_resource type="Resource" id="Resource_obfno"]
 script = ExtResource("13_3mrow")
 identity = "Wooden Plank"
 button_label = "Use Wooden Plank"
-repeatable = false
-max_repeats = 0
+repeatable = null
+max_repeats = null
+hide_on_complete = null
+activate_trigger = null
+completed_trigger = null
 requires_item = "Wooden Plank"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_na5ej"), SubResource("Resource_io7y8")])
-start_active = true
+button_actions = null
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
-
-[sub_resource type="Resource" id="Resource_6yfwg"]
-script = ExtResource("20_adfmm")
-trigger_on_complete = "MulchAdo"
-
-[sub_resource type="Resource" id="Resource_hna3s"]
-script = ExtResource("29_16qfy")
-set_to_active = true
-
-[sub_resource type="Resource" id="Resource_waknu"]
-script = ExtResource("30_76lb0")
-timer_length = 12.0
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_hna3s")])
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_yjbit"]
-
-[sub_resource type="Resource" id="Resource_5bsgw"]
-resource_local_to_scene = true
-script = ExtResource("23_wrj0k")
-secondary_mesh = SubResource("CapsuleMesh_yjbit")
-
-[sub_resource type="Resource" id="Resource_xduqy"]
-resource_local_to_scene = true
-script = ExtResource("28_77ij2")
-quest_to_count = "MulchAdo"
-number_to_complete = 2
-completed_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_5bsgw")])
-
-[sub_resource type="Resource" id="Resource_80mei"]
-resource_local_to_scene = true
-script = ExtResource("16_a77ou")
-trigger = "MulchAdo"
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_xduqy")])
-
-[sub_resource type="Resource" id="Resource_k3jmr"]
-resource_local_to_scene = true
-script = ExtResource("13_3mrow")
-identity = "FlowerBox"
-button_label = "Add Mulch"
-repeatable = false
-max_repeats = 0
-requires_item = "Scrap of Paper"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu")])
-start_active = true
-pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_80mei")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
-
-[sub_resource type="Resource" id="Resource_u0psl"]
-resource_local_to_scene = true
-script = ExtResource("13_3mrow")
-identity = "FlowerBox"
-button_label = "Add Mulch"
-repeatable = false
-max_repeats = 0
-requires_item = "Scrap of Paper"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu")])
-start_active = true
-pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_80mei")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
-
-[sub_resource type="Resource" id="Resource_qj88i"]
-resource_local_to_scene = true
-script = ExtResource("13_3mrow")
-identity = "FlowerBox"
-button_label = "Add Mulch"
-repeatable = false
-max_repeats = 0
-requires_item = "Scrap of Paper"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu")])
-start_active = false
-pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_80mei")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
-
-[sub_resource type="Resource" id="Resource_7yqsf"]
-resource_local_to_scene = true
-script = ExtResource("13_3mrow")
-identity = "FlowerBox"
-button_label = "Add Mulch"
-repeatable = false
-max_repeats = 0
-requires_item = "Scrap of Paper"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu")])
-start_active = true
-pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_80mei")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
+triggerable_actions = null
+hide_when_inactive = true
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_32ug3")
@@ -455,7 +250,7 @@ script = ExtResource("1_32ug3")
 environment = SubResource("Environment_c8ay7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
-transform = Transform3D(0.310126, -0.731438, -0.607306, 0.148272, -0.593772, 0.790854, -0.939062, -0.335311, -0.0756924, 0, 187.271, 12.6341)
+transform = Transform3D(0.310126, -0.731438, -0.607306, 0.148272, -0.593772, 0.790854, -0.939062, -0.335311, -0.0756918, 0, 38.5699, 12.6341)
 light_color = Color(1, 0.964706, 0.945098, 1)
 shadow_enabled = true
 shadow_opacity = 0.85
@@ -537,7 +332,7 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("4_vco24")
 
 [node name="Neighbor11" parent="Building/BuildingB" instance=ExtResource("3_1xceb")]
-transform = Transform3D(-7.6, 0, 0, 0, 7.6, 0, 0, 0, -7.6, 13, 44, -22)
+transform = Transform3D(-7.6, 0, 0, 0, 7.6, 0, 0, 0, -7.6, 11, 41, -44)
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("4_vco24")
 interaction = SubResource("Resource_s6mrn")
@@ -553,7 +348,7 @@ skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("4_vco24")
 
 [node name="Cat_2" parent="Building/BuildingB" instance=ExtResource("15_eqhpk")]
-transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, 14, 44, -13)
+transform = Transform3D(-6, 0, 0, 0, 6, 0, 0, 0, -6, 10, 43, -35)
 skeleton = NodePath("../../..")
 surface_material_override/0 = ExtResource("4_vco24")
 interaction = SubResource("Resource_htnr5")
@@ -615,64 +410,44 @@ interaction = SubResource("Resource_xx5t3")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
 
 [node name="PickUp" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -16.6883, 44.0834, 53.802)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -14.6883, 52.0834, -227.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_8t78g")
+interaction = SubResource("Resource_bn7sl")
 
 [node name="PickUp2" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 21.3117, 105.083, 53.802)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 23.3117, 113.083, -227.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_e4j84")
+interaction = SubResource("Resource_wll51")
 
 [node name="PickUp3" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -32.6883, 14.0834, -54.198)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -30.6883, 20.0834, -116.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_sf5uj")
+interaction = SubResource("Resource_3g8ft")
 
 [node name="PickUp4" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.3117, 75.0834, -54.198)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 7.3117, 81.0834, -116.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_vi28l")
+interaction = SubResource("Resource_10sum")
 
 [node name="PickUp5" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -27.6883, 18.0834, 222.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_t043i")
+interaction = SubResource("Resource_bgke0")
 
 [node name="PickUp6" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 10.3117, 79.0834, 222.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_b2pv3")
+interaction = SubResource("Resource_lm8dt")
 
 [node name="PickUp7" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -11.6883, 49.0834, 118.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_ekvqh")
+interaction = SubResource("Resource_qutyl")
 
 [node name="PickUp8" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 26.3117, 110.083, 118.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_03lcg")
-
-[node name="PickUp9" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -27.6883, 18.0834, -119.198)
-skeleton = NodePath("")
-interaction = SubResource("Resource_lxfxr")
-
-[node name="PickUp10" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 10.3117, 79.0834, -119.198)
-skeleton = NodePath("")
-interaction = SubResource("Resource_k44n5")
-
-[node name="PickUp11" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -11.6883, 49.0834, -223.198)
-skeleton = NodePath("")
-interaction = SubResource("Resource_ufh2q")
-
-[node name="PickUp12" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
-transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 26.3117, 110.083, -223.198)
-skeleton = NodePath("")
-interaction = SubResource("Resource_2r2kg")
+interaction = SubResource("Resource_nhkob")
 
 [node name="CatPlank" parent="Building" instance=ExtResource("15_eqhpk")]
 transform = Transform3D(9, 0, 0, 0, -4.76837e-07, 1.8, 0, -15.3, -2.38419e-07, -39, 18, 238)
@@ -684,19 +459,3 @@ transform = Transform3D(-3.09086e-08, -0.707107, -0.707107, 1, 1.91069e-15, -4.3
 
 [node name="Node3D2" parent="." instance=ExtResource("12_yabfs")]
 transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, 1, -4.37114e-08, 0, 3.09086e-08, 0.707107, 0.707107, 16, 44, 325)
-
-[node name="Interactable_FlowerBed" parent="." instance=ExtResource("28_6rup8")]
-transform = Transform3D(4.34667, 0, -4.09969, 0, 6.3, 0, 1.16469, 0, 15.3003, 30.8232, 99.9131, -42.857)
-interaction = SubResource("Resource_k3jmr")
-
-[node name="Interactable_FlowerBed2" parent="." instance=ExtResource("28_6rup8")]
-transform = Transform3D(4.5, 0, -2.38419e-07, 0, 6.3, 0, -1.19209e-07, 0, 15.84, 16.8232, 99.9131, 42.143)
-interaction = SubResource("Resource_u0psl")
-
-[node name="Interactable_FlowerBed3" parent="." instance=ExtResource("28_6rup8")]
-transform = Transform3D(4.34667, 0, -4.09969, 0, 6.3, 0, 1.16469, 0, 15.3003, -5.17681, 39.9131, -42.857)
-interaction = SubResource("Resource_qj88i")
-
-[node name="Interactable_FlowerBed4" parent="." instance=ExtResource("28_6rup8")]
-transform = Transform3D(4.5, 0, -2.38419e-07, 0, 6.3, 0, -1.19209e-07, 0, 15.84, -19.1768, 39.9131, 42.143)
-interaction = SubResource("Resource_7yqsf")

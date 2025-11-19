@@ -1,4 +1,4 @@
-extends Node3D
+extends CharacterBody3D
 
 @export var path : PathFollow3D
 
@@ -11,8 +11,13 @@ var z_offset: float = 0
 @export var up_speed: float = 0.25
 @export var side_speed: float = 0.25
 
-var ramp_up_mod = 0
+var y_ramp_up_mod = 0
+var z_ramp_up_mod = 0
+var sprint_multiplier = 1
 
+const RAMP_INC = 0.05
+const SPRINT_MAX = 2
+	
 func _ready():
 	var curve = path.get_parent()
 	if curve is Path3D:
@@ -21,30 +26,43 @@ func _ready():
 		x_offset = position.x
 
 func _process(delta):
-	if not Input.is_anything_pressed():
-		ramp_up_mod = 0
+	# Sprint
+	if Input.is_action_pressed("Sprint"):
+		sprint_multiplier = clampf(sprint_multiplier + RAMP_INC, 1.0, SPRINT_MAX)
 	else:
-		ramp_up_mod = clampf(ramp_up_mod + 0.05, 0.0, 1.0)
-	if Input.is_action_just_pressed("Sprint"):
-		up_speed += 0.05
-		side_speed += 0.05
+		sprint_multiplier = clampf(sprint_multiplier - RAMP_INC, 1.0, SPRINT_MAX)
+		
+	# Up Down
 	if Input.is_action_pressed("Up"):
-		y_offset += 1 * (up_speed * ramp_up_mod)
-	if Input.is_action_pressed("Down"):
-		y_offset -= 1 * (up_speed * ramp_up_mod)
+		y_ramp_up_mod = clampf(y_ramp_up_mod + RAMP_INC, -1.0, 1.0)
+	elif Input.is_action_pressed("Down"):
+		y_ramp_up_mod = clampf(y_ramp_up_mod - RAMP_INC, -1.0, 1.0)
+	else:
+		if y_ramp_up_mod > 0:
+			y_ramp_up_mod = clampf(y_ramp_up_mod - RAMP_INC, 0, 1.0)
+		else:
+			y_ramp_up_mod = clampf(y_ramp_up_mod + RAMP_INC, -1.0, 0)
+	
+	# Left Right
 	if Input.is_action_pressed("Left"):
-		z_offset -= 1 * (side_speed * ramp_up_mod)
-	if Input.is_action_pressed("Right"):
-		z_offset += 1 * (side_speed * ramp_up_mod)
+		z_ramp_up_mod = clampf(z_ramp_up_mod - RAMP_INC, -1.0, 1.0)
+	elif Input.is_action_pressed("Right"):
+		z_ramp_up_mod = clampf(z_ramp_up_mod + RAMP_INC, -1.0, 1.0)
+	else:
+		if z_ramp_up_mod > 0:
+			z_ramp_up_mod = clampf(z_ramp_up_mod - RAMP_INC, 0, 1.0)
+		else:
+			z_ramp_up_mod = clampf(z_ramp_up_mod + RAMP_INC, -1.0, 0)
+		
+	# Misc Inputs
 	if Input.is_action_just_pressed("Select"):
 		Events.emit_signal("select_ui")
-		
-	y_offset = clamp(y_offset, Y_MINMAX.x, Y_MINMAX.y)
-	position.y = y_offset
-	z_offset = clamp(z_offset, Z_MINMAX.x, Z_MINMAX.y)
-	position.z = z_offset
 	
+	
+	y_offset = clamp(y_offset + (up_speed * y_ramp_up_mod * sprint_multiplier), Y_MINMAX.x, Y_MINMAX.y)
+	z_offset = clamp(z_offset + (side_speed * z_ramp_up_mod * sprint_multiplier), Z_MINMAX.x, Z_MINMAX.y)
+
 	path.progress_ratio = y_offset / Y_MINMAX.y
 	x_offset = path.global_position.x
-	position.x = x_offset
 	
+	position = Vector3(x_offset, y_offset, z_offset)

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://banhvi7f5xcm"]
+
+[ext_resource type="Script" path="res://Scripts/PickUpNotifyModule.gd" id="1_ohnk2"]
+
+[node name="Notify" type="Node3D"]
+script = ExtResource("1_ohnk2")
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="."]
+
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]

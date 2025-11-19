@@ -1,0 +1,13 @@
+[gd_scene load_steps=5 format=3 uid="uid://5jn1a5mcfq6d"]
+
+[ext_resource type="PackedScene" uid="uid://bmgmpouwk621s" path="res://Scenes/Interactable.tscn" id="1_2i7er"]
+[ext_resource type="Material" uid="uid://bg7n2p1xwuhm3" path="res://Meshes/Materials/M_Green.tres" id="2_hfnb5"]
+[ext_resource type="Resource" uid="uid://b3mufrsmnwp1a" path="res://Scripts/InteractionRes/FlowerBedInteraction.tres" id="3_22jsm"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_o5pew"]
+
+[node name="Interactable_FlowerBed" instance=ExtResource("1_2i7er")]
+transform = Transform3D(4.5, 0, 0, 0, 6.3, 0, 0, 0, 15.84, 0, 0, 0)
+mesh = SubResource("BoxMesh_o5pew")
+surface_material_override/0 = ExtResource("2_hfnb5")
+interaction = ExtResource("3_22jsm")
