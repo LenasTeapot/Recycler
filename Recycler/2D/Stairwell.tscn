@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://kutrpavtiwhj"]
+
+[ext_resource type="Material" uid="uid://b6fvtxu58jaje" path="res://2D/BuildingMaterial.tres" id="1_7uiap"]
+[ext_resource type="Texture2D" uid="uid://di8076u52hw7i" path="res://2D/Building_A.tga" id="2_jyhr1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="BuildingA" type="Sprite2D" parent="."]
+material = ExtResource("1_7uiap")
+position = Vector2(0, 4.5)
+texture = ExtResource("2_jyhr1")
+region_enabled = true
+region_rect = Rect2(0, 744, 835, 745)
+
+[node name="BuildingA2" type="Sprite2D" parent="."]
+material = ExtResource("1_7uiap")
+position = Vector2(6, 712.5)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_jyhr1")
+region_enabled = true
+region_rect = Rect2(0, 744, 835, 745)
+
+[node name="BuildingA3" type="Sprite2D" parent="."]
+material = ExtResource("1_7uiap")
+position = Vector2(0, 1426)
+texture = ExtResource("2_jyhr1")
+region_enabled = true
+region_rect = Rect2(0, 744, 835, 745)
+
+[node name="BuildingA4" type="Sprite2D" parent="."]
+material = ExtResource("1_7uiap")
+position = Vector2(6, 2133)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_jyhr1")
+region_enabled = true
+region_rect = Rect2(0, 744, 835, 745)

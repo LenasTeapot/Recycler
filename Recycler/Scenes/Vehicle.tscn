@@ -7,8 +7,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_il3ne"]
 size = Vector3(0.5, 0.5, 10)
 
-[node name="Vehicle" type="CharacterBody3D"]
-motion_mode = 1
+[node name="Vehicle" type="Node3D"]
 script = ExtResource("1_qtq6r")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

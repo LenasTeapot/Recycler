@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bal0h1jinn8j0"]
+
+[ext_resource type="Material" uid="uid://b6fvtxu58jaje" path="res://2D/BuildingMaterial.tres" id="1_yr5fu"]
+[ext_resource type="Texture2D" uid="uid://di8076u52hw7i" path="res://2D/Building_A.tga" id="2_172p8"]
+
+[node name="Apartment" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -972.0
+offset_top = -304.0
+offset_right = 975.0
+offset_bottom = 348.0
+color = Color(0.15097, 0.1333, 0.31, 1)
+
+[node name="BuildingA" type="Sprite2D" parent="."]
+material = ExtResource("1_yr5fu")
+texture = ExtResource("2_172p8")
+region_enabled = true
+region_rect = Rect2(14, 12, 2014, 723)

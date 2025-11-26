@@ -1,0 +1,172 @@
+[gd_scene load_steps=4 format=3 uid="uid://dh72a4lvoihw0"]
+
+[ext_resource type="Material" uid="uid://b6fvtxu58jaje" path="res://2D/BuildingMaterial.tres" id="2_3yfy8"]
+[ext_resource type="Texture2D" uid="uid://di8076u52hw7i" path="res://2D/Building_A.tga" id="3_60ifg"]
+[ext_resource type="Script" path="res://2D/Camera2DController.gd" id="4_d3e7p"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="R_Side4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+material = ExtResource("2_3yfy8")
+position = Vector2(567, 2142)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(1143, 12, 886, 723)
+
+[node name="R_Side3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+material = ExtResource("2_3yfy8")
+position = Vector2(567, 1431)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(1143, 12, 886, 723)
+
+[node name="R_Side2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+material = ExtResource("2_3yfy8")
+position = Vector2(567, 727)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(1143, 12, 886, 723)
+
+[node name="R_Side" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+material = ExtResource("2_3yfy8")
+position = Vector2(567, 12)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(1143, 12, 886, 723)
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 0.9)
+
+[node name="L_Side4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+material = ExtResource("2_3yfy8")
+position = Vector2(-640, 1920)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(14, 12, 724, 723)
+
+[node name="L_Side3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+material = ExtResource("2_3yfy8")
+position = Vector2(-643, 1311)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(14, 12, 724, 723)
+
+[node name="L_Side2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+material = ExtResource("2_3yfy8")
+position = Vector2(-643, 679)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(14, 12, 724, 723)
+
+[node name="L_Side" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+material = ExtResource("2_3yfy8")
+position = Vector2(-643, 12)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(14, 12, 724, 723)
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 0.95)
+
+[node name="C_Side4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+material = ExtResource("2_3yfy8")
+position = Vector2(-77, 2046)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(737, 12, 408, 723)
+
+[node name="C_Side3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+material = ExtResource("2_3yfy8")
+position = Vector2(-77, 1383)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(737, 12, 408, 723)
+
+[node name="C_Side2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+material = ExtResource("2_3yfy8")
+position = Vector2(-77, 703)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(737, 12, 408, 723)
+
+[node name="C_Side" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+material = ExtResource("2_3yfy8")
+position = Vector2(-77, 12)
+texture = ExtResource("3_60ifg")
+region_enabled = true
+region_rect = Rect2(737, 12, 408, 723)
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(1, 1.1)
+
+[node name="Top" type="NinePatchRect" parent="ParallaxBackground/ParallaxLayer2"]
+material = ExtResource("2_3yfy8")
+offset_left = -1008.0
+offset_top = 176.0
+offset_right = 1007.0
+offset_bottom = 386.0
+texture = ExtResource("3_60ifg")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top2" type="NinePatchRect" parent="ParallaxBackground/ParallaxLayer2"]
+material = ExtResource("2_3yfy8")
+offset_left = -1008.0
+offset_top = 936.0
+offset_right = 1007.0
+offset_bottom = 1146.0
+texture = ExtResource("3_60ifg")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top3" type="NinePatchRect" parent="ParallaxBackground/ParallaxLayer2"]
+material = ExtResource("2_3yfy8")
+offset_left = -1008.0
+offset_top = 1664.0
+offset_right = 1007.0
+offset_bottom = 1874.0
+texture = ExtResource("3_60ifg")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top4" type="NinePatchRect" parent="ParallaxBackground/ParallaxLayer2"]
+material = ExtResource("2_3yfy8")
+offset_left = -1008.0
+offset_top = 2408.0
+offset_right = 1007.0
+offset_bottom = 2618.0
+texture = ExtResource("3_60ifg")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.7, 0.7)
+script = ExtResource("4_d3e7p")
+Y_MINMAX = Vector2(-3840, 3840)
+X_MINMAX = Vector2(-2048, 2048)
+up_speed = 5.0
+side_speed = 5.0

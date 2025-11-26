@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://b6fvtxu58jaje"]
+
+[ext_resource type="Shader" path="res://LinesFills.gdshader" id="1_vkqpe"]
+
+[resource]
+shader = ExtResource("1_vkqpe")
+shader_parameter/base_color = Color(0.96, 0.8, 0.768, 1)
+shader_parameter/light_color = Color(1, 0.835294, 0.545098, 1)
+shader_parameter/shadow_color = Color(0.247333, 0.106, 0.53, 1)
+shader_parameter/light_strength = 0.775
+shader_parameter/shadow_strength = 0.623
+shader_parameter/precision = 0.62
+shader_parameter/world_gradient_color_start = Color(1, 1, 0.901961, 1)
+shader_parameter/world_gradient_color_end = Color(0.18, 0.221, 1, 1)
+shader_parameter/horizontal = true
+shader_parameter/offset = 3000.0
+shader_parameter/gradient_strength = 0.491

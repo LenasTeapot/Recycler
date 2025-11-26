@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://i67tu7nwx076"]
+
+[ext_resource type="PackedScene" uid="uid://bal0h1jinn8j0" path="res://2D/Apartment.tscn" id="1_wllfr"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Apartment4" parent="." instance=ExtResource("1_wllfr")]
+position = Vector2(0, 2133)
+scale = Vector2(-1, 1)
+
+[node name="Apartment3" parent="." instance=ExtResource("1_wllfr")]
+position = Vector2(0, 1423)
+
+[node name="Apartment2" parent="." instance=ExtResource("1_wllfr")]
+position = Vector2(0, 712)
+rotation = 3.14159
+scale = Vector2(1, -1)
+
+[node name="Apartment" parent="." instance=ExtResource("1_wllfr")]

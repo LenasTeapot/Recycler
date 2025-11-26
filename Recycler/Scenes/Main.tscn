@@ -44,7 +44,6 @@ reflected_light_source = 2
 ssao_enabled = true
 ssil_radius = 1.16
 ssil_sharpness = 1.0
-fog_enabled = true
 fog_light_color = Color(0.619608, 0.792157, 0.94902, 1)
 fog_density = 0.001
 adjustment_contrast = 0.82
@@ -480,7 +479,7 @@ up_speed = 1.5
 side_speed = 1.5
 
 [node name="Camera3D" type="Camera3D" parent="Vehicle"]
-transform = Transform3D(1, 5.77316e-15, -1.13687e-13, 0, 0.99863, 0.0523358, 1.13687e-13, -0.052336, 0.998634, 4.76837e-07, 19, 75.9999)
+transform = Transform3D(1, 6.21725e-15, -1.13687e-13, 0, 0.99863, 0.0523358, 1.27898e-13, -0.052336, 0.998634, 4.76837e-07, 19, 75.9999)
 attributes = SubResource("CameraAttributesPractical_b6cod")
 current = true
 fov = 40.0
@@ -524,7 +523,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, 
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 5, 258)
 
 [node name="BuildingB" parent="Building" instance=ExtResource("1_x1kyp")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 5, 0)
 
 [node name="Neighbor7" parent="Building/BuildingB" instance=ExtResource("3_1xceb")]
 transform = Transform3D(-7.6, 0, 0, 0, 7.6, 0, 0, 0, -7.6, -35, 102, -52)

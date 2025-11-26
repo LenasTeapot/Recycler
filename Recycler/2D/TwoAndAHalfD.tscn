@@ -1,0 +1,127 @@
+[gd_scene load_steps=4 format=3 uid="uid://btjgp7oumkkp8"]
+
+[ext_resource type="Material" uid="uid://behuw3wkooahb" path="res://2D/Building_3D.tres" id="1_7uugu"]
+[ext_resource type="Texture2D" uid="uid://di8076u52hw7i" path="res://2D/Building_A.tga" id="1_g1fjn"]
+[ext_resource type="Script" path="res://2D/Camera2DController.gd" id="2_cnhug"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, 0, -1)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(26, 6, 714, 721)
+
+[node name="Sprite3D2" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(737, 6, 408, 721)
+
+[node name="Sprite3D3" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05, 0, 1)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(1142, 6, 884, 721)
+
+[node name="Sprite3D4" type="Sprite3D" parent="."]
+transform = Transform3D(2.52, 0, 0, 0, 1.2, 0, 0, 0, 1, 0.475, -4, 5)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(843, 769, 804, 126)
+
+[node name="Sprite3D5" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -8, -1)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(26, 6, 714, 721)
+
+[node name="Sprite3D6" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -8, 0)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(737, 6, 408, 721)
+
+[node name="Sprite3D7" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05, -8, 1)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(1142, 6, 884, 721)
+
+[node name="Sprite3D8" type="Sprite3D" parent="."]
+transform = Transform3D(2.52, 0, 0, 0, 1.2, 0, 0, 0, 1, 0.475, -12, 5)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(843, 769, 804, 126)
+
+[node name="Sprite3D9" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -16, -1)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(26, 6, 714, 721)
+
+[node name="Sprite3D10" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -16, 0)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(737, 6, 408, 721)
+
+[node name="Sprite3D11" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05, -16, 1)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(1142, 6, 884, 721)
+
+[node name="Sprite3D12" type="Sprite3D" parent="."]
+transform = Transform3D(2.52, 0, 0, 0, 1.2, 0, 0, 0, 1, 0.475, -20, 5)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(843, 769, 804, 126)
+
+[node name="Sprite3D13" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6, -24, -1)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(26, 6, 714, 721)
+
+[node name="Sprite3D14" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, -24, 0)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(737, 6, 408, 721)
+
+[node name="Sprite3D15" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.05, -24, 1)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(1142, 6, 884, 721)
+
+[node name="Sprite3D16" type="Sprite3D" parent="."]
+transform = Transform3D(2.52, 0, 0, 0, 1.2, 0, 0, 0, 1, 0.475, -28, 5)
+material_override = ExtResource("1_7uugu")
+texture = ExtResource("1_g1fjn")
+region_enabled = true
+region_rect = Rect2(843, 769, 804, 126)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.7, 1.2, 90)
+fov = 10.5
+size = 13.969
+script = ExtResource("2_cnhug")
+Y_MINMAX = Vector2(-10000, 10000)
+X_MINMAX = Vector2(-10000, 10000)

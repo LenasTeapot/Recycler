@@ -1,0 +1,308 @@
+[gd_scene load_steps=10 format=3 uid="uid://bt6hsuc1aykpo"]
+
+[ext_resource type="PackedScene" uid="uid://i67tu7nwx076" path="res://2D/Building.tscn" id="1_e4u14"]
+[ext_resource type="Shader" path="res://2D/SolidGradient.gdshader" id="1_ercgl"]
+[ext_resource type="Material" uid="uid://b6fvtxu58jaje" path="res://2D/BuildingMaterial.tres" id="1_swg7k"]
+[ext_resource type="PackedScene" uid="uid://kutrpavtiwhj" path="res://2D/Stairwell.tscn" id="2_ct12m"]
+[ext_resource type="Texture2D" uid="uid://di8076u52hw7i" path="res://2D/Building_A.tga" id="2_nc2w7"]
+[ext_resource type="Material" uid="uid://be18wud45srgg" path="res://2D/PlantMaterial_1.tres" id="5_5e3f5"]
+[ext_resource type="Script" path="res://2D/Camera2DController.gd" id="8_f2ucy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2xvib"]
+shader = ExtResource("1_ercgl")
+shader_parameter/gradient_start = Color(0.466667, 0.592157, 1, 1)
+shader_parameter/gradient_end = Color(0.72, 0.86, 1, 1)
+shader_parameter/horizontal = true
+shader_parameter/offset = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7m8vo"]
+shader = ExtResource("1_ercgl")
+shader_parameter/gradient_start = Color(0.2314, 0.681443, 0.89, 1)
+shader_parameter/gradient_end = Color(0.0509804, 0.12549, 0.572549, 1)
+shader_parameter/horizontal = true
+shader_parameter/offset = 0.22
+
+[node name="MainScene" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_2xvib")
+offset_left = -6589.0
+offset_top = -3609.0
+offset_right = 6801.0
+offset_bottom = 1457.0
+color = Color(0.74, 1, 1, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_7m8vo")
+offset_left = -6589.0
+offset_top = 1438.0
+offset_right = 6801.0
+offset_bottom = 4513.0
+color = Color(3.85046e-07, 0.391495, 0.645211, 1)
+
+[node name="Bottom" type="NinePatchRect" parent="."]
+material = ExtResource("1_swg7k")
+offset_left = -4657.0
+offset_top = 2470.0
+offset_right = 4643.0
+offset_bottom = 2808.18
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Building B" parent="." instance=ExtResource("1_e4u14")]
+
+[node name="Building A" parent="." instance=ExtResource("1_e4u14")]
+position = Vector2(-2772, 0)
+
+[node name="Building C" parent="." instance=ExtResource("1_e4u14")]
+position = Vector2(2772, 0)
+
+[node name="Stairwell" parent="." instance=ExtResource("2_ct12m")]
+position = Vector2(1386, 3)
+
+[node name="Stairwell3" parent="." instance=ExtResource("2_ct12m")]
+position = Vector2(4158, 3)
+
+[node name="Stairwell4" parent="." instance=ExtResource("2_ct12m")]
+position = Vector2(-4158, 3)
+
+[node name="Stairwell2" parent="." instance=ExtResource("2_ct12m")]
+position = Vector2(-1386, 3)
+
+[node name="Top" type="NinePatchRect" parent="."]
+material = ExtResource("1_swg7k")
+offset_left = -4585.0
+offset_top = -551.0
+offset_right = 4605.0
+offset_bottom = -341.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+material = ExtResource("5_5e3f5")
+position = Vector2(837, 86)
+texture = ExtResource("2_nc2w7")
+region_enabled = true
+region_rect = Rect2(847, 954, 282, 320)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+texture_filter = 1
+material = ExtResource("5_5e3f5")
+position = Vector2(992, 97)
+texture = ExtResource("2_nc2w7")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(847, 954, 282, 251)
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+texture_filter = 1
+material = ExtResource("5_5e3f5")
+position = Vector2(-3732, 2255)
+texture = ExtResource("2_nc2w7")
+region_enabled = true
+region_rect = Rect2(847, 954, 282, 201)
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+texture_filter = 1
+material = ExtResource("5_5e3f5")
+position = Vector2(-3584, 2233)
+texture = ExtResource("2_nc2w7")
+flip_h = true
+region_enabled = true
+region_rect = Rect2(847, 954, 282, 251)
+
+[node name="Balconies" type="Node2D" parent="."]
+position = Vector2(-1003, 209)
+
+[node name="Top2" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_right = 2015.0
+offset_bottom = 210.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top3" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_top = 710.0
+offset_right = 2015.0
+offset_bottom = 920.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top4" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_top = 1414.0
+offset_right = 2015.0
+offset_bottom = 1624.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top5" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_top = 2122.0
+offset_right = 2015.0
+offset_bottom = 2332.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top10" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_left = -2776.0
+offset_right = -761.0
+offset_bottom = 210.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top11" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_left = -2776.0
+offset_top = 710.0
+offset_right = -761.0
+offset_bottom = 920.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top12" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_left = -2776.0
+offset_top = 1414.0
+offset_right = -761.0
+offset_bottom = 1624.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top13" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_left = -2776.0
+offset_top = 2122.0
+offset_right = -761.0
+offset_bottom = 2332.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top6" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_left = 2770.0
+offset_right = 4785.0
+offset_bottom = 210.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top7" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_left = 2770.0
+offset_top = 710.0
+offset_right = 4785.0
+offset_bottom = 920.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top8" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_left = 2770.0
+offset_top = 1414.0
+offset_right = 4785.0
+offset_bottom = 1624.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Top9" type="NinePatchRect" parent="Balconies"]
+material = ExtResource("1_swg7k")
+offset_left = 2770.0
+offset_top = 2130.0
+offset_right = 4785.0
+offset_bottom = 2340.0
+texture = ExtResource("2_nc2w7")
+region_rect = Rect2(837, 763, 814, 134)
+patch_margin_left = 760
+patch_margin_top = 108
+patch_margin_right = 784
+patch_margin_bottom = 102
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+script = ExtResource("8_f2ucy")
+Y_MINMAX = Vector2(-10000, 10000)
+X_MINMAX = Vector2(-10000, 10000)
+up_speed = 8.0
+side_speed = 8.0
