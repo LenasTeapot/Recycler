@@ -1,36 +1,37 @@
 [gd_scene load_steps=88 format=3 uid="uid://cbdtpmwajox4l"]
 
-[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_32ug3"]
+[ext_resource type="Script" uid="uid://clxeal8f47xyf" path="res://Scripts/GameManager.gd" id="1_32ug3"]
 [ext_resource type="PackedScene" uid="uid://du0fsi2mhwtl6" path="res://Scenes/BuildingB.tscn" id="1_x1kyp"]
 [ext_resource type="PackedScene" uid="uid://cgwyhdkm3jtdd" path="res://Scenes/Vehicle.tscn" id="2_32wy5"]
 [ext_resource type="PackedScene" uid="uid://bm4m78xu4hut5" path="res://Scenes/Building_Blank.tscn" id="2_ms54r"]
-[ext_resource type="Script" path="res://Scripts/UI_Manager.gd" id="3_0fs0c"]
+[ext_resource type="Script" uid="uid://ct03qayrs5wjy" path="res://Scripts/UI_Manager.gd" id="3_0fs0c"]
 [ext_resource type="PackedScene" uid="uid://jkad4oailp2o" path="res://Scenes/Neighbor.tscn" id="3_1xceb"]
 [ext_resource type="PackedScene" uid="uid://bc3tttw1q2h7d" path="res://Scenes/canvas_inventory.tscn" id="4_36l3p"]
 [ext_resource type="Material" uid="uid://dopok0aev4pdr" path="res://Meshes/Materials/M_Orange.tres" id="4_vco24"]
 [ext_resource type="AudioStream" uid="uid://cp7w6o4bqccr7" path="res://Music/013_Another_August.mp3" id="7_tjtpk"]
 [ext_resource type="PackedScene" uid="uid://it37vtv0lqlx" path="res://Scenes/BuildingDivider.tscn" id="8_wpchk"]
+[ext_resource type="Script" uid="uid://cyj4o3irr01q5" path="res://Resources/Action.gd" id="10_u7mjy"]
 [ext_resource type="PackedScene" uid="uid://cetfr4bdme11c" path="res://Scenes/Rooftop.tscn" id="11_05aaq"]
-[ext_resource type="Script" path="res://Resources/Step.gd" id="12_b3cp6"]
+[ext_resource type="Script" uid="uid://cmvdlgmacru1t" path="res://Resources/Step.gd" id="12_b3cp6"]
 [ext_resource type="PackedScene" uid="uid://baiyjs8fbgswq" path="res://Scenes/Panel_Dome.tscn" id="12_yabfs"]
-[ext_resource type="Script" path="res://Resources/Interaction_Action.gd" id="13_3mrow"]
-[ext_resource type="Script" path="res://Resources/Action_GrantInventoryItem.gd" id="13_jamxo"]
-[ext_resource type="Script" path="res://Resources/Action_SetVisible.gd" id="13_tks5g"]
+[ext_resource type="Script" uid="uid://dufhl41ob2usq" path="res://Resources/Interaction_Action.gd" id="13_3mrow"]
+[ext_resource type="Script" uid="uid://b0utoo8kgmgbw" path="res://Resources/Action_GrantInventoryItem.gd" id="13_jamxo"]
+[ext_resource type="Script" uid="uid://btrywrbbiuf7r" path="res://Resources/Action_SetVisible.gd" id="13_tks5g"]
 [ext_resource type="PackedScene" uid="uid://cp5sbultbkxb7" path="res://Scenes/Interactable_PickUp.tscn" id="14_hmao5"]
-[ext_resource type="Script" path="res://Resources/Item.gd" id="14_i2k0t"]
+[ext_resource type="Script" uid="uid://c567l0x1qrrhc" path="res://Resources/Item.gd" id="14_i2k0t"]
 [ext_resource type="AudioStream" uid="uid://8aea08odyg77" path="res://Music/cat_purractive_loop.wav" id="14_ox2bt"]
-[ext_resource type="Script" path="res://Resources/Interaction_Speech.gd" id="15_64chp"]
+[ext_resource type="Script" uid="uid://jnarsmnxbill" path="res://Resources/Interaction_Speech.gd" id="15_64chp"]
 [ext_resource type="PackedScene" uid="uid://bmgmpouwk621s" path="res://Scenes/Interactable.tscn" id="15_eqhpk"]
-[ext_resource type="Script" path="res://Resources/TriggerableAction.gd" id="16_a77ou"]
-[ext_resource type="Script" path="res://Resources/Action_SetActive.gd" id="16_mcdjh"]
-[ext_resource type="Script" path="res://Resources/Action_TriggerQuestComplete.gd" id="20_adfmm"]
-[ext_resource type="Script" path="res://Resources/Action_TrashCollect.gd" id="20_gbf3u"]
-[ext_resource type="Script" path="res://Resources/Interaction_TrashPickUp.gd" id="21_686el"]
-[ext_resource type="Script" path="res://Resources/Action_MeshSwap.gd" id="23_wrj0k"]
+[ext_resource type="Script" uid="uid://cndoqyabmoqqt" path="res://Resources/TriggerableAction.gd" id="16_a77ou"]
+[ext_resource type="Script" uid="uid://dqbtk7331774e" path="res://Resources/Action_SetActive.gd" id="16_mcdjh"]
+[ext_resource type="Script" uid="uid://bb0ij54lfl1l6" path="res://Resources/Action_TriggerQuestComplete.gd" id="20_adfmm"]
+[ext_resource type="Script" uid="uid://ohwkd3xijg06" path="res://Resources/Action_TrashCollect.gd" id="20_gbf3u"]
+[ext_resource type="Script" uid="uid://dwb2emlriqukm" path="res://Resources/Interaction_TrashPickUp.gd" id="21_686el"]
+[ext_resource type="Script" uid="uid://407oyofvnnjg" path="res://Resources/Action_MeshSwap.gd" id="23_wrj0k"]
 [ext_resource type="PackedScene" uid="uid://5jn1a5mcfq6d" path="res://Scenes/Interactable_FlowerBed.tscn" id="28_6rup8"]
-[ext_resource type="Script" path="res://Resources/Action_CountQuest.gd" id="28_77ij2"]
-[ext_resource type="Script" path="res://Resources/Action_ResetNonRepeatable.gd" id="29_16qfy"]
-[ext_resource type="Script" path="res://Resources/Action_TimerDelayedActions.gd" id="30_76lb0"]
+[ext_resource type="Script" uid="uid://cu0svpx6bnq2e" path="res://Resources/Action_CountQuest.gd" id="28_77ij2"]
+[ext_resource type="Script" uid="uid://bghbn5u6i8d8e" path="res://Resources/Action_ResetNonRepeatable.gd" id="29_16qfy"]
+[ext_resource type="Script" uid="uid://ceobr2hdcynog" path="res://Resources/Action_TimerDelayedActions.gd" id="30_76lb0"]
 
 [sub_resource type="Sky" id="Sky_5sfjv"]
 
@@ -68,34 +69,24 @@ albedo_color = Color(0, 0.607843, 0.839216, 1)
 
 [sub_resource type="Resource" id="Resource_w08a3"]
 script = ExtResource("12_b3cp6")
-trigger = ""
 line = "Mr. Thumbs, where are you?"
-complete = false
 
 [sub_resource type="Resource" id="Resource_cl84f"]
 script = ExtResource("12_b3cp6")
 trigger = "CatPlankQuest"
 line = "Oh, there you are!"
-complete = false
 
 [sub_resource type="Resource" id="Resource_s6mrn"]
 script = ExtResource("15_64chp")
-identity = "Name of Person"
 speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_w08a3"), SubResource("Resource_cl84f")])
-pop_up_side = 0
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
 
 [sub_resource type="Resource" id="Resource_4tdr4"]
 script = ExtResource("13_tks5g")
 override_visible = true
-set_children_to_match = true
 
 [sub_resource type="Resource" id="Resource_lkjax"]
 script = ExtResource("14_i2k0t")
 item_name = "Cat Fur"
-unique = false
 
 [sub_resource type="Resource" id="Resource_p2lvd"]
 script = ExtResource("13_jamxo")
@@ -103,8 +94,6 @@ unique_items = Array[ExtResource("14_i2k0t")]([SubResource("Resource_lkjax")])
 
 [sub_resource type="Resource" id="Resource_3eyvq"]
 script = ExtResource("13_tks5g")
-override_visible = false
-set_children_to_match = true
 
 [sub_resource type="Resource" id="Resource_j8hyd"]
 script = ExtResource("16_mcdjh")
@@ -113,7 +102,7 @@ override_active = true
 [sub_resource type="Resource" id="Resource_6alsi"]
 script = ExtResource("16_a77ou")
 trigger = "CatPlankQuest"
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_j8hyd")])
+actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_j8hyd")])
 
 [sub_resource type="Resource" id="Resource_htnr5"]
 script = ExtResource("13_3mrow")
@@ -122,68 +111,52 @@ button_label = "Pet the Cat"
 sound = ExtResource("14_ox2bt")
 repeatable = true
 max_repeats = -1
-requires_item = ""
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_p2lvd")])
+button_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_p2lvd")])
 start_active = false
 pop_up_side = 2
 triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_6alsi")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_4tdr4")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_3eyvq")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_4tdr4")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_3eyvq")])
 
 [sub_resource type="Resource" id="Resource_n45ph"]
 script = ExtResource("12_b3cp6")
-trigger = ""
 line = "Ugh."
-complete = false
 
 [sub_resource type="Resource" id="Resource_feb76"]
 script = ExtResource("12_b3cp6")
 trigger = "CatPlankQuest"
 line = "Aw, that cat left."
-complete = false
 
 [sub_resource type="Resource" id="Resource_3vdiv"]
 script = ExtResource("15_64chp")
-identity = "Name of Person"
 speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_n45ph"), SubResource("Resource_feb76")])
-pop_up_side = 0
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
 
 [sub_resource type="Resource" id="Resource_prwa3"]
 script = ExtResource("13_tks5g")
 override_visible = true
-set_children_to_match = true
 
 [sub_resource type="Resource" id="Resource_s07ib"]
 script = ExtResource("13_tks5g")
-override_visible = false
-set_children_to_match = true
 
 [sub_resource type="Resource" id="Resource_kye2c"]
 script = ExtResource("12_b3cp6")
-trigger = ""
 line = "Meow! Meow!"
-complete = false
 
 [sub_resource type="Resource" id="Resource_t4qie"]
 script = ExtResource("16_mcdjh")
-override_active = false
 
 [sub_resource type="Resource" id="Resource_68s5y"]
 script = ExtResource("16_a77ou")
 trigger = "CatPlankQuest"
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_t4qie")])
+actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_t4qie")])
 
 [sub_resource type="Resource" id="Resource_xx5t3"]
 script = ExtResource("15_64chp")
 identity = "The Lost Cat"
 speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_kye2c")])
-pop_up_side = 0
 triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_68s5y")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_prwa3")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_s07ib")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_prwa3")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_s07ib")])
 
 [sub_resource type="Resource" id="Resource_pijsy"]
 script = ExtResource("20_gbf3u")
@@ -191,144 +164,129 @@ script = ExtResource("20_gbf3u")
 [sub_resource type="Resource" id="Resource_34ijc"]
 script = ExtResource("13_tks5g")
 override_visible = true
-set_children_to_match = true
 
 [sub_resource type="Resource" id="Resource_v44o3"]
 script = ExtResource("13_tks5g")
-override_visible = false
-set_children_to_match = true
 
 [sub_resource type="Resource" id="Resource_8t78g"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_e4j84"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_sf5uj"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_vi28l"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_t043i"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_b2pv3"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_ekvqh"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_03lcg"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_lxfxr"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_k44n5"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_ufh2q"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_2r2kg"]
 resource_local_to_scene = true
 script = ExtResource("21_686el")
 identity = "Trash Pick Up"
 button_label = "Take Trash"
-action_resourse = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_pijsy")])
+action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_v44o3")])
+active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
+inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_na5ej"]
 script = ExtResource("20_adfmm")
@@ -344,15 +302,9 @@ secondary_mesh = SubResource("BoxMesh_7yob7")
 script = ExtResource("13_3mrow")
 identity = "Wooden Plank"
 button_label = "Use Wooden Plank"
-repeatable = false
-max_repeats = 0
 requires_item = "Wooden Plank"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_na5ej"), SubResource("Resource_io7y8")])
-start_active = true
+button_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_na5ej"), SubResource("Resource_io7y8")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
 
 [sub_resource type="Resource" id="Resource_6yfwg"]
 script = ExtResource("20_adfmm")
@@ -360,92 +312,60 @@ trigger_on_complete = "MulchAdo"
 
 [sub_resource type="Resource" id="Resource_hna3s"]
 script = ExtResource("29_16qfy")
-set_to_active = true
 
 [sub_resource type="Resource" id="Resource_waknu"]
 script = ExtResource("30_76lb0")
 timer_length = 12.0
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_hna3s")])
+actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_hna3s")])
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_yjbit"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cubph"]
 
-[sub_resource type="Resource" id="Resource_5bsgw"]
-resource_local_to_scene = true
+[sub_resource type="Resource" id="Resource_iye4y"]
 script = ExtResource("23_wrj0k")
-secondary_mesh = SubResource("CapsuleMesh_yjbit")
+secondary_mesh = SubResource("CapsuleMesh_cubph")
+metadata/_custom_type_script = "uid://407oyofvnnjg"
 
-[sub_resource type="Resource" id="Resource_xduqy"]
-resource_local_to_scene = true
+[sub_resource type="Resource" id="Resource_442l3"]
 script = ExtResource("28_77ij2")
-quest_to_count = "MulchAdo"
 number_to_complete = 2
-completed_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_5bsgw")])
+completed_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_iye4y")])
+metadata/_custom_type_script = "uid://cu0svpx6bnq2e"
 
-[sub_resource type="Resource" id="Resource_80mei"]
-resource_local_to_scene = true
-script = ExtResource("16_a77ou")
-trigger = "MulchAdo"
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_xduqy")])
-
-[sub_resource type="Resource" id="Resource_k3jmr"]
+[sub_resource type="Resource" id="Resource_u7mjy"]
 resource_local_to_scene = true
 script = ExtResource("13_3mrow")
 identity = "FlowerBox"
 button_label = "Add Mulch"
-repeatable = false
-max_repeats = 0
 requires_item = "Scrap of Paper"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu")])
-start_active = true
+button_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu"), SubResource("Resource_442l3")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_80mei")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
 
-[sub_resource type="Resource" id="Resource_u0psl"]
+[sub_resource type="Resource" id="Resource_4yxf6"]
 resource_local_to_scene = true
 script = ExtResource("13_3mrow")
 identity = "FlowerBox"
 button_label = "Add Mulch"
-repeatable = false
-max_repeats = 0
 requires_item = "Scrap of Paper"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu")])
-start_active = true
+button_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu"), SubResource("Resource_442l3")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_80mei")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
 
-[sub_resource type="Resource" id="Resource_qj88i"]
+[sub_resource type="Resource" id="Resource_qta6b"]
 resource_local_to_scene = true
 script = ExtResource("13_3mrow")
 identity = "FlowerBox"
 button_label = "Add Mulch"
-repeatable = false
-max_repeats = 0
 requires_item = "Scrap of Paper"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu")])
-start_active = false
+button_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu"), SubResource("Resource_442l3")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_80mei")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
 
-[sub_resource type="Resource" id="Resource_7yqsf"]
+[sub_resource type="Resource" id="Resource_x3rx7"]
 resource_local_to_scene = true
 script = ExtResource("13_3mrow")
 identity = "FlowerBox"
 button_label = "Add Mulch"
-repeatable = false
-max_repeats = 0
 requires_item = "Scrap of Paper"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu")])
-start_active = true
+button_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu"), SubResource("Resource_442l3")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_80mei")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_32ug3")
@@ -489,7 +409,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -80.2088, 9.32824, 0)
 curve = SubResource("Curve3D_dfgtn")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D2"]
-transform = Transform3D(-4.37114e-08, -0.920967, -0.38964, 0, 0.38964, -0.920967, 1, -4.02567e-08, -1.70317e-08, 0.515013, 1.2173, 0)
+transform = Transform3D(-4.371139e-08, -0.92096686, -0.3896399, 0, 0.3896399, -0.92096686, 1, -4.0256737e-08, -1.70317e-08, 0.51501334, 1.2173043, 0)
 progress = 1.32316
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
@@ -686,16 +606,16 @@ transform = Transform3D(-3.09086e-08, -0.707107, 0.707107, 1, -4.37114e-08, 0, 3
 
 [node name="Interactable_FlowerBed" parent="." instance=ExtResource("28_6rup8")]
 transform = Transform3D(4.34667, 0, -4.09969, 0, 6.3, 0, 1.16469, 0, 15.3003, 30.8232, 99.9131, -42.857)
-interaction = SubResource("Resource_k3jmr")
+interaction = SubResource("Resource_u7mjy")
 
 [node name="Interactable_FlowerBed2" parent="." instance=ExtResource("28_6rup8")]
 transform = Transform3D(4.5, 0, -2.38419e-07, 0, 6.3, 0, -1.19209e-07, 0, 15.84, 16.8232, 99.9131, 42.143)
-interaction = SubResource("Resource_u0psl")
+interaction = SubResource("Resource_4yxf6")
 
 [node name="Interactable_FlowerBed3" parent="." instance=ExtResource("28_6rup8")]
 transform = Transform3D(4.34667, 0, -4.09969, 0, 6.3, 0, 1.16469, 0, 15.3003, -5.17681, 39.9131, -42.857)
-interaction = SubResource("Resource_qj88i")
+interaction = SubResource("Resource_qta6b")
 
 [node name="Interactable_FlowerBed4" parent="." instance=ExtResource("28_6rup8")]
 transform = Transform3D(4.5, 0, -2.38419e-07, 0, 6.3, 0, -1.19209e-07, 0, 15.84, -19.1768, 39.9131, 42.143)
-interaction = SubResource("Resource_7yqsf")
+interaction = SubResource("Resource_x3rx7")

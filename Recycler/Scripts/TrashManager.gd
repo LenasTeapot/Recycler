@@ -25,11 +25,19 @@ func _ready():
 func _on_add_item_to_list(item : Item_Resource):
 	items_list.add_item(item)
 	
-func _on_trash_collected(point):
+func _process(_delta):
+	# Sprint
+	if Input.is_action_just_pressed("Cheat"):
+		add_trash()
+		
+func add_trash():
 	### TODO Move this to inventory
 	var new_trash = items_list.get_trash(randi_range(1, 4))
 	Events.emit_signal("take_inventory", new_trash)
-	###
+	
+func _on_trash_collected(point):
+	add_trash()
+	
 	if point == null:
 		return
 	point.set_active(false)
@@ -44,4 +52,3 @@ func on_timeout():
 		inactive_points.erase(new)
 		active_points.append(new)
 		new.set_active(true)
-

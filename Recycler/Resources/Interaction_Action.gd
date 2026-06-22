@@ -11,10 +11,14 @@ class_name Interaction_Action
 @export var button_actions: Array[Action]
 @export var start_active : bool = true
 
+var _button_actions: Array[Action]
+
 var trigger_count: int = 0
 
 func load_data(node_in):
 	is_active = start_active
+	for a in button_actions:
+		_button_actions.append(a.duplicate(true))
 	super(node_in)
 		
 func area_entered():
@@ -30,8 +34,8 @@ func do_button_action(node):
 	if requires_item != "":
 		Events.emit_signal("use_inventory", requires_item)
 	#Do connected Actions
-	if len(button_actions) > 0:
-		for action in button_actions:
+	if len(_button_actions) > 0:
+		for action in _button_actions:
 			action._action(node)
 	#Check if this should be disabled
 	trigger_count += 1

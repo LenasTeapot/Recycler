@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cgwyhdkm3jtdd"]
 
-[ext_resource type="Script" path="res://Scripts/VehicleController.gd" id="1_qtq6r"]
+[ext_resource type="Script" uid="uid://dgn28ku1ucmu8" path="res://Scripts/VehicleController.gd" id="1_qtq6r"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_lb1hq"]
 
@@ -10,13 +10,15 @@ size = Vector3(0.5, 0.5, 10)
 [node name="Vehicle" type="Node3D"]
 script = ExtResource("1_qtq6r")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(8.76778, 0, 0, 0, 6.40264, 0, 0, 0, 6.40264, 0, 0, 4.76837e-07)
 mesh = SubResource("BoxMesh_lb1hq")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
-transform = Transform3D(10.9597, 0, 0, 0, 4.80198, -1.19259e-08, 0, 1.19259e-08, 4.80198, 0, 0, 4.76837e-07)
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Mesh"]
+transform = Transform3D(1.2499969, 0, 0, 0, 0.75, -1.8626536e-09, 0, 1.8626536e-09, 0.75, 0, 0, 0)
 mesh = SubResource("BoxMesh_lb1hq")
+skeleton = NodePath("../..")
 
 [node name="Vehicle_Area3D" type="Area3D" parent="."]
 transform = Transform3D(30, 0, 0, 0, 30, 0, 0, 0, 30, 0, 0, 0)

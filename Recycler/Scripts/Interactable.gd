@@ -43,4 +43,3 @@ func get_speech_data():
 		printerr("This node has no speech data to retrieve.")
 
 	return interaction.get("speech_data")
-

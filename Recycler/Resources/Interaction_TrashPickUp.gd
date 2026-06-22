@@ -1,6 +1,8 @@
 extends Interaction
 class_name Interaction_TrashPickUp
 
+###TODO: Can this be replaced with Interaction_Action?
+
 @export_category("Trash Pick Up")
 @export var identity : String = "Name of Interaction" # Debug only
 @export var button_label : String = "DO ACTION"

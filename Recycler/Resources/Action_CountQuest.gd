@@ -16,4 +16,3 @@ func _action(node):
 		print("CountQuest complete : ", node.name)
 		for a in completed_actions:
 			a._action(node)
-

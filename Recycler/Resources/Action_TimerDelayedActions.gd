@@ -7,13 +7,11 @@ class_name Action_TimerDelayedActions
 var timer
 
 func _action(node):
-	print("Start Timer")
 	timer = Timer.new()
 	timer.one_shot = true
 	timer.wait_time = timer_length
 	timer.timeout.connect(
 		func(): 
-			print("Timer done")
 			do_actions_list(node)
 			)
 	node.add_child(timer)

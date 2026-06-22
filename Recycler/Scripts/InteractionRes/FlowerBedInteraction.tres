@@ -1,12 +1,13 @@
 [gd_resource type="Resource" script_class="Interaction_Action" load_steps=15 format=3 uid="uid://b3mufrsmnwp1a"]
 
-[ext_resource type="Script" path="res://Resources/Action_TriggerQuestComplete.gd" id="1_hqmfx"]
-[ext_resource type="Script" path="res://Resources/Interaction_Action.gd" id="2_wk06e"]
-[ext_resource type="Script" path="res://Resources/Action_ResetNonRepeatable.gd" id="2_xhwc7"]
-[ext_resource type="Script" path="res://Resources/Action_MeshSwap.gd" id="3_nx5pr"]
-[ext_resource type="Script" path="res://Resources/Action_TimerDelayedActions.gd" id="3_qyhkh"]
-[ext_resource type="Script" path="res://Resources/Action_CountQuest.gd" id="4_40s32"]
-[ext_resource type="Script" path="res://Resources/TriggerableAction.gd" id="5_tklnf"]
+[ext_resource type="Script" uid="uid://cyj4o3irr01q5" path="res://Resources/Action.gd" id="1_cubph"]
+[ext_resource type="Script" uid="uid://bb0ij54lfl1l6" path="res://Resources/Action_TriggerQuestComplete.gd" id="1_hqmfx"]
+[ext_resource type="Script" uid="uid://dufhl41ob2usq" path="res://Resources/Interaction_Action.gd" id="2_wk06e"]
+[ext_resource type="Script" uid="uid://bghbn5u6i8d8e" path="res://Resources/Action_ResetNonRepeatable.gd" id="2_xhwc7"]
+[ext_resource type="Script" uid="uid://407oyofvnnjg" path="res://Resources/Action_MeshSwap.gd" id="3_nx5pr"]
+[ext_resource type="Script" uid="uid://ceobr2hdcynog" path="res://Resources/Action_TimerDelayedActions.gd" id="3_qyhkh"]
+[ext_resource type="Script" uid="uid://cu0svpx6bnq2e" path="res://Resources/Action_CountQuest.gd" id="4_40s32"]
+[ext_resource type="Script" uid="uid://cndoqyabmoqqt" path="res://Resources/TriggerableAction.gd" id="5_tklnf"]
 
 [sub_resource type="Resource" id="Resource_6yfwg"]
 script = ExtResource("1_hqmfx")
@@ -14,44 +15,30 @@ trigger_on_complete = "MulchAdo"
 
 [sub_resource type="Resource" id="Resource_hna3s"]
 script = ExtResource("2_xhwc7")
-set_to_active = true
 
 [sub_resource type="Resource" id="Resource_waknu"]
 script = ExtResource("3_qyhkh")
 timer_length = 12.0
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_hna3s")])
+actions = Array[ExtResource("1_cubph")]([SubResource("Resource_hna3s")])
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_yjbit"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cubph"]
 
-[sub_resource type="Resource" id="Resource_5bsgw"]
-resource_local_to_scene = true
+[sub_resource type="Resource" id="Resource_iye4y"]
 script = ExtResource("3_nx5pr")
-secondary_mesh = SubResource("CapsuleMesh_yjbit")
+secondary_mesh = SubResource("CapsuleMesh_cubph")
+metadata/_custom_type_script = "uid://407oyofvnnjg"
 
-[sub_resource type="Resource" id="Resource_xduqy"]
-resource_local_to_scene = true
+[sub_resource type="Resource" id="Resource_442l3"]
 script = ExtResource("4_40s32")
-quest_to_count = "MulchAdo"
 number_to_complete = 2
-completed_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_5bsgw")])
-
-[sub_resource type="Resource" id="Resource_80mei"]
-resource_local_to_scene = true
-script = ExtResource("5_tklnf")
-trigger = "MulchAdo"
-actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_xduqy")])
+completed_actions = Array[ExtResource("1_cubph")]([SubResource("Resource_iye4y")])
+metadata/_custom_type_script = "uid://cu0svpx6bnq2e"
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_wk06e")
 identity = "FlowerBox"
 button_label = "Add Mulch"
-repeatable = false
-max_repeats = 0
 requires_item = "Scrap of Paper"
-button_actions = Array[Resource("res://Resources/Action.gd")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu")])
-start_active = true
+button_actions = Array[ExtResource("1_cubph")]([SubResource("Resource_6yfwg"), SubResource("Resource_waknu"), SubResource("Resource_442l3")])
 pop_up_side = 1
-triggerable_actions = Array[ExtResource("5_tklnf")]([SubResource("Resource_80mei")])
-active_actions = Array[Resource("res://Resources/Action.gd")]([])
-inactive_actions = Array[Resource("res://Resources/Action.gd")]([])

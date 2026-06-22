@@ -43,7 +43,6 @@ func update_item_label(item : Item_Resource):
 		new_label.set_up(item.item_name)
 	
 func remove_item_label(item):
-	var label = labels[item]
+	var label = labels[item.item_name]
 	label.remove_ui(func(): label.queue_free())
-	labels.erase(item)
-
+	labels.erase(item.item_name)

@@ -33,4 +33,3 @@ func remove_ui(callback):
 	tween.tween_property(
 		self, "scale", Vector2(0, 0), 0.25).set_trans(Tween.TRANS_BACK).from(Vector2(1, 1))
 	tween.tween_callback(callback)
-
