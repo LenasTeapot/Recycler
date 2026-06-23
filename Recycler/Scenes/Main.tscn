@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://cbdtpmwajox4l"]
+[gd_scene load_steps=71 format=3 uid="uid://cbdtpmwajox4l"]
 
 [ext_resource type="Script" uid="uid://clxeal8f47xyf" path="res://Scripts/GameManager.gd" id="1_32ug3"]
 [ext_resource type="PackedScene" uid="uid://du0fsi2mhwtl6" path="res://Scenes/BuildingB.tscn" id="1_x1kyp"]
@@ -25,8 +25,6 @@
 [ext_resource type="Script" uid="uid://cndoqyabmoqqt" path="res://Resources/TriggerableAction.gd" id="16_a77ou"]
 [ext_resource type="Script" uid="uid://dqbtk7331774e" path="res://Resources/Action_SetActive.gd" id="16_mcdjh"]
 [ext_resource type="Script" uid="uid://bb0ij54lfl1l6" path="res://Resources/Action_TriggerQuestComplete.gd" id="20_adfmm"]
-[ext_resource type="Script" uid="uid://ohwkd3xijg06" path="res://Resources/Action_TrashCollect.gd" id="20_gbf3u"]
-[ext_resource type="Script" uid="uid://dwb2emlriqukm" path="res://Resources/Interaction_TrashPickUp.gd" id="21_686el"]
 [ext_resource type="Script" uid="uid://407oyofvnnjg" path="res://Resources/Action_MeshSwap.gd" id="23_wrj0k"]
 [ext_resource type="PackedScene" uid="uid://5jn1a5mcfq6d" path="res://Scenes/Interactable_FlowerBed.tscn" id="28_6rup8"]
 [ext_resource type="Script" uid="uid://cu0svpx6bnq2e" path="res://Resources/Action_CountQuest.gd" id="28_77ij2"]
@@ -157,136 +155,6 @@ speech_data = Array[ExtResource("12_b3cp6")]([SubResource("Resource_kye2c")])
 triggerable_actions = Array[ExtResource("16_a77ou")]([SubResource("Resource_68s5y")])
 active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_prwa3")])
 inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_s07ib")])
-
-[sub_resource type="Resource" id="Resource_pijsy"]
-script = ExtResource("20_gbf3u")
-
-[sub_resource type="Resource" id="Resource_34ijc"]
-script = ExtResource("13_tks5g")
-override_visible = true
-
-[sub_resource type="Resource" id="Resource_v44o3"]
-script = ExtResource("13_tks5g")
-
-[sub_resource type="Resource" id="Resource_8t78g"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_e4j84"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_sf5uj"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_vi28l"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_t043i"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_b2pv3"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_ekvqh"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_03lcg"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_lxfxr"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_k44n5"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_ufh2q"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
-
-[sub_resource type="Resource" id="Resource_2r2kg"]
-resource_local_to_scene = true
-script = ExtResource("21_686el")
-identity = "Trash Pick Up"
-button_label = "Take Trash"
-action_resourse = Array[ExtResource("10_u7mjy")]([SubResource("Resource_pijsy")])
-pop_up_side = 1
-active_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_34ijc")])
-inactive_actions = Array[ExtResource("10_u7mjy")]([SubResource("Resource_v44o3")])
 
 [sub_resource type="Resource" id="Resource_na5ej"]
 script = ExtResource("20_adfmm")
@@ -536,62 +404,50 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21, 0, 0)
 [node name="PickUp" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -16.6883, 44.0834, 53.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_8t78g")
 
 [node name="PickUp2" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 21.3117, 105.083, 53.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_e4j84")
 
 [node name="PickUp3" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -32.6883, 14.0834, -54.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_sf5uj")
 
 [node name="PickUp4" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 5.3117, 75.0834, -54.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_vi28l")
 
 [node name="PickUp5" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -27.6883, 18.0834, 222.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_t043i")
 
 [node name="PickUp6" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 10.3117, 79.0834, 222.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_b2pv3")
 
 [node name="PickUp7" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -11.6883, 49.0834, 118.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_ekvqh")
 
 [node name="PickUp8" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 26.3117, 110.083, 118.802)
 skeleton = NodePath("")
-interaction = SubResource("Resource_03lcg")
 
 [node name="PickUp9" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -27.6883, 18.0834, -119.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_lxfxr")
 
 [node name="PickUp10" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 10.3117, 79.0834, -119.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_k44n5")
 
 [node name="PickUp11" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, -11.6883, 49.0834, -223.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_ufh2q")
 
 [node name="PickUp12" parent="Building" groups=["PickUp"] instance=ExtResource("14_hmao5")]
 transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 26.3117, 110.083, -223.198)
 skeleton = NodePath("")
-interaction = SubResource("Resource_2r2kg")
 
 [node name="CatPlank" parent="Building" instance=ExtResource("15_eqhpk")]
 transform = Transform3D(9, 0, 0, 0, -4.76837e-07, 1.8, 0, -15.3, -2.38419e-07, -39, 18, 238)
